@@ -1,0 +1,1572 @@
+[
+  {
+    "ts": "2026-07-20T17:27:08.187Z",
+    "level": "info",
+    "message": "Found 29 Pending jobs with valid applyUrl"
+  },
+  {
+    "ts": "2026-07-20T17:27:08.381Z",
+    "level": "info",
+    "message": "Pulled 29 jobs (hard limit: 283)"
+  },
+  {
+    "ts": "2026-07-20T17:27:11.305Z",
+    "level": "info",
+    "message": "Processing: \"Senior Frontend Software Engineer - Typescript | React\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:27:14.934Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:27:27.537Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:27:34.187Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:27:35.313Z",
+    "level": "info",
+    "message": "Custom: filled \"Are you legally authorized to work in the United States?\n*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:27:36.438Z",
+    "level": "info",
+    "message": "Custom: filled \"Will you now or in the future require visa sponsorship?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:27:38.526Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_senior_frontend_software_engineer___typescript___react_2026-07-20T17-27-37-942Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:27:52.323Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:27:52.735Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae323e → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:27:52.783Z",
+    "level": "info",
+    "message": "Pacing: waiting 15.0s before next job (1/29)"
+  },
+  {
+    "ts": "2026-07-20T17:28:07.798Z",
+    "level": "info",
+    "message": "Processing: \"Senior React Native Engineer — Driver App @ Nash\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:28:12.947Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:28:12.993Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:28:16.035Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:28:19.192Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:28:25.986Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:28:25.992Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:28:39.291Z",
+    "level": "warn",
+    "message": "Form elements still present after submit — possible validation block."
+  },
+  {
+    "ts": "2026-07-20T17:28:39.397Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae323d → \"Failed - Generic form fallback failed\""
+  },
+  {
+    "ts": "2026-07-20T17:28:39.450Z",
+    "level": "info",
+    "message": "Pacing: waiting 23.5s before next job (2/29)"
+  },
+  {
+    "ts": "2026-07-20T17:29:02.984Z",
+    "level": "info",
+    "message": "Processing: \"Ubiminds - Senior Software Engineer - React + .Net (522)\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:29:07.396Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:29:07.442Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:29:11.432Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:29:11.483Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Protocol error (Runtime.callFunctionOn): Argument should belong to the same JavaScript world as target object"
+  },
+  {
+    "ts": "2026-07-20T17:29:12.264Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: resume"
+  },
+  {
+    "ts": "2026-07-20T17:29:21.358Z",
+    "level": "info",
+    "message": "Heuristic: filled 4 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:29:27.263Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:29:27.882Z",
+    "level": "info",
+    "message": "Custom: checked consent \"consent[store]\""
+  },
+  {
+    "ts": "2026-07-20T17:29:28.398Z",
+    "level": "info",
+    "message": "Custom: checked consent \"consent[marketing]\""
+  },
+  {
+    "ts": "2026-07-20T17:29:41.539Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:29:41.881Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae323c → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:29:41.934Z",
+    "level": "info",
+    "message": "Pacing: waiting 23.1s before next job (3/29)"
+  },
+  {
+    "ts": "2026-07-20T17:30:05.024Z",
+    "level": "info",
+    "message": "Processing: \"React Native Engineer, Merchant Experience Mobile\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:30:10.474Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:30:11.711Z",
+    "level": "info",
+    "message": "Form hidden. Clicking Greenhouse \"Apply\" button to reveal form..."
+  },
+  {
+    "ts": "2026-07-20T17:30:16.475Z",
+    "level": "warn",
+    "message": "Greenhouse handler failed — falling back to heuristic: Could not locate standard Greenhouse field elements."
+  },
+  {
+    "ts": "2026-07-20T17:30:16.580Z",
+    "level": "warn",
+    "message": "No form elements found — marking as failed"
+  },
+  {
+    "ts": "2026-07-20T17:30:17.899Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\failed\\job_boards_greenhouse_io_react_native_engineer__merchant_experience_mobile_2026-07-20T17-30-16-601Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:30:18.005Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae323a → \"Failed - No form elements found\""
+  },
+  {
+    "ts": "2026-07-20T17:30:18.110Z",
+    "level": "info",
+    "message": "Pacing: waiting 26.4s before next job (4/29)"
+  },
+  {
+    "ts": "2026-07-20T17:30:44.662Z",
+    "level": "info",
+    "message": "Processing: \"Software Engineer - Fullstack, US Remote @ Brigit\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:30:48.349Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:30:48.409Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:30:51.538Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:30:54.597Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:31:01.557Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:31:01.574Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:31:07.784Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile URL\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:31:12.989Z",
+    "level": "info",
+    "message": "Custom: filled \"Github URL\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:31:15.256Z",
+    "level": "info",
+    "message": "Custom: filled \"Please state your base salary compensation expectations.\" with \"100,000 USD\""
+  },
+  {
+    "ts": "2026-07-20T17:31:17.001Z",
+    "level": "info",
+    "message": "Custom: filled \"How many years of experience do you have in Software Development?\" with \"5 years\""
+  },
+  {
+    "ts": "2026-07-20T17:31:30.253Z",
+    "level": "warn",
+    "message": "Form elements still present after submit — possible validation block."
+  },
+  {
+    "ts": "2026-07-20T17:31:30.346Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae3237 → \"Failed - Generic form fallback failed\""
+  },
+  {
+    "ts": "2026-07-20T17:31:30.411Z",
+    "level": "info",
+    "message": "Pacing: waiting 17.6s before next job (5/29)"
+  },
+  {
+    "ts": "2026-07-20T17:31:47.993Z",
+    "level": "info",
+    "message": "Processing: \"Anovium\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:31:51.558Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:31:51.606Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:31:51.607Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: applyBtn.click is not a function"
+  },
+  {
+    "ts": "2026-07-20T17:31:51.700Z",
+    "level": "warn",
+    "message": "No form elements found — marking as failed"
+  },
+  {
+    "ts": "2026-07-20T17:31:52.170Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\failed\\jobs_lever_co_anovium_2026-07-20T17-31-51-701Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:31:52.290Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae3235 → \"Failed - No form elements found\""
+  },
+  {
+    "ts": "2026-07-20T17:31:52.335Z",
+    "level": "info",
+    "message": "Pacing: waiting 25.1s before next job (6/29)"
+  },
+  {
+    "ts": "2026-07-20T17:32:17.491Z",
+    "level": "info",
+    "message": "Processing: \"React Developer\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:32:21.419Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:32:33.513Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:32:40.050Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:32:42.263Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_react_developer_2026-07-20T17-32-41-556Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:32:55.921Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:32:56.314Z",
+    "level": "info",
+    "message": "DB: 6a5e46567401ca9a58ae3234 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:32:56.368Z",
+    "level": "info",
+    "message": "Pacing: waiting 25.1s before next job (7/29)"
+  },
+  {
+    "ts": "2026-07-20T17:33:21.511Z",
+    "level": "info",
+    "message": "Processing: \"Senior JavaScript Software Engineer - React (Contract, ...\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:33:25.096Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:33:26.390Z",
+    "level": "warn",
+    "message": "Greenhouse handler failed — falling back to heuristic: Could not locate standard Greenhouse field elements."
+  },
+  {
+    "ts": "2026-07-20T17:33:26.581Z",
+    "level": "info",
+    "message": "Heuristic: filled 0 fields (resume: false)"
+  },
+  {
+    "ts": "2026-07-20T17:33:27.013Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae3112 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:33:27.069Z",
+    "level": "info",
+    "message": "Pacing: waiting 17.0s before next job (8/29)"
+  },
+  {
+    "ts": "2026-07-20T17:33:44.117Z",
+    "level": "info",
+    "message": "Processing: \"Job Application for Senior React Native Engineer at Fueled\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:33:47.530Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:33:59.798Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:34:06.337Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile*\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:34:08.379Z",
+    "level": "info",
+    "message": "Custom: filled \"How did you hear about Fueled and this opportunity?*\" with \"LinkedIn\""
+  },
+  {
+    "ts": "2026-07-20T17:34:10.353Z",
+    "level": "info",
+    "message": "Custom: filled \"Do you have 2 or more years of experience working in a consulting firm or agency environment (e.g., full service digital agency, branding agency, social media agency, creative agency, etc.)?*\" with \"5 years\""
+  },
+  {
+    "ts": "2026-07-20T17:34:13.958Z",
+    "level": "info",
+    "message": "Custom: filled \"Do you have any upcoming commitments over the next three months that could affect your work schedule or availability? (For example, travel, vacations, or other obligations.)\n*\" with \"Immediate / 2 weeks\""
+  },
+  {
+    "ts": "2026-07-20T17:34:15.085Z",
+    "level": "info",
+    "message": "Custom: filled \"US Work Authorization Status:*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:34:17.636Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_job_application_for_senior_react_native_engineer_at_fueled_2026-07-20T17-34-16-613Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:34:31.355Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:34:31.738Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae310f → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:34:31.796Z",
+    "level": "info",
+    "message": "Pacing: waiting 23.1s before next job (9/29)"
+  },
+  {
+    "ts": "2026-07-20T17:34:54.907Z",
+    "level": "info",
+    "message": "Processing: \"Frontend Developer (React/Typescript)\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:34:58.388Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:35:11.545Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:35:15.504Z",
+    "level": "info",
+    "message": "Custom: filled \"Start date month\" with \"Immediate / 2 weeks\""
+  },
+  {
+    "ts": "2026-07-20T17:35:18.815Z",
+    "level": "info",
+    "message": "Custom: filled \"Start date year\" with \"Immediate / 2 weeks\""
+  },
+  {
+    "ts": "2026-07-20T17:35:26.015Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:35:27.151Z",
+    "level": "info",
+    "message": "Custom: filled \"Are you authorized to work lawfully in the United States for Avochato?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:35:29.953Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_frontend_developer__react_typescript__2026-07-20T17-35-28-664Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:35:43.775Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:35:44.181Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae310c → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:35:44.237Z",
+    "level": "info",
+    "message": "Pacing: waiting 17.6s before next job (10/29)"
+  },
+  {
+    "ts": "2026-07-20T17:36:01.869Z",
+    "level": "info",
+    "message": "Processing: \"Senior Software Engineer (React Native)\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:36:05.138Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:36:17.556Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:36:24.359Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile*\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:36:29.657Z",
+    "level": "info",
+    "message": "Custom: filled \"Website (GitHub, GitLab, portfolio link, etc) *\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:36:30.816Z",
+    "level": "info",
+    "message": "Custom: filled \"Are you legally authorized to work in the United States?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:36:31.988Z",
+    "level": "info",
+    "message": "Custom: filled \"Will you now or in the future require visa sponsorship? *\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:36:34.739Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_senior_software_engineer__react_native__2026-07-20T17-36-33-493Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:36:48.519Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:36:48.857Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae310a → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:36:48.901Z",
+    "level": "info",
+    "message": "Pacing: waiting 23.2s before next job (11/29)"
+  },
+  {
+    "ts": "2026-07-20T17:37:12.150Z",
+    "level": "info",
+    "message": "Processing: \"ION Group - Principal React Engineer, New York\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:37:15.938Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:37:15.986Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:37:19.850Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:37:33.062Z",
+    "level": "info",
+    "message": "Resume uploaded to Lever"
+  },
+  {
+    "ts": "2026-07-20T17:37:39.486Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:37:43.555Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[Portfolio]\" with \"https://yourportfolio.com\""
+  },
+  {
+    "ts": "2026-07-20T17:37:45.765Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\jobs_lever_co_ion_group___principal_react_engineer__new_york_2026-07-20T17-37-45-060Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:37:46.436Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Node is either not clickable or not an Element"
+  },
+  {
+    "ts": "2026-07-20T17:37:46.840Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae3109 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:37:46.896Z",
+    "level": "info",
+    "message": "Pacing: waiting 16.1s before next job (12/29)"
+  },
+  {
+    "ts": "2026-07-20T17:38:02.969Z",
+    "level": "info",
+    "message": "Processing: \"Senior React Native Engineer - Anovium\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:38:06.326Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:38:06.375Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:38:10.624Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:38:10.672Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Protocol error (Runtime.callFunctionOn): Argument should belong to the same JavaScript world as target object"
+  },
+  {
+    "ts": "2026-07-20T17:38:11.451Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: resume"
+  },
+  {
+    "ts": "2026-07-20T17:38:20.323Z",
+    "level": "info",
+    "message": "Heuristic: filled 4 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:38:26.374Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:38:31.007Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[GitHub]\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:38:35.190Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[Portfolio]\" with \"https://yourportfolio.com\""
+  },
+  {
+    "ts": "2026-07-20T17:38:48.318Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:38:48.675Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae3107 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:38:48.728Z",
+    "level": "info",
+    "message": "Pacing: waiting 28.0s before next job (13/29)"
+  },
+  {
+    "ts": "2026-07-20T17:39:16.763Z",
+    "level": "info",
+    "message": "Processing: \"Frontend Engineer (React) @ Sweed\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:39:20.624Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:39:20.672Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:39:23.777Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:39:26.913Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:39:33.753Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:39:33.772Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:39:40.146Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Link\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:39:42.436Z",
+    "level": "info",
+    "message": "Custom: filled \"What are you salary expectations for this role? (in $, gross, yearly/monthly)\" with \"100,000 USD\""
+  },
+  {
+    "ts": "2026-07-20T17:39:55.614Z",
+    "level": "info",
+    "message": "No explicit success/failure indicators — assuming applied."
+  },
+  {
+    "ts": "2026-07-20T17:39:55.951Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30fb → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:39:56.009Z",
+    "level": "info",
+    "message": "Pacing: waiting 17.6s before next job (14/29)"
+  },
+  {
+    "ts": "2026-07-20T17:40:13.589Z",
+    "level": "info",
+    "message": "Processing: \"Full Stack Engineer (Laravel - React) at Workwize\" @ job-boards.eu.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:40:17.362Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:40:29.602Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:40:36.443Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile*\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:40:41.566Z",
+    "level": "info",
+    "message": "Custom: filled \"Website/Portfolio/Github\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:40:44.030Z",
+    "level": "info",
+    "message": "Custom: filled \"What is your annual salary indication in Euro?*\" with \"100,000 USD\""
+  },
+  {
+    "ts": "2026-07-20T17:40:45.949Z",
+    "level": "info",
+    "message": "Custom: filled \"Do you have 8 years work experience with the Laravel and React frameworks?*\" with \"5 years\""
+  },
+  {
+    "ts": "2026-07-20T17:40:47.957Z",
+    "level": "info",
+    "message": "Custom: filled \"How did you hear about this role?\" with \"LinkedIn\""
+  },
+  {
+    "ts": "2026-07-20T17:40:50.427Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_eu_greenhouse_io_full_stack_engineer__laravel___react__at_workwize_2026-07-20T17-40-49-468Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:41:04.243Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:41:04.614Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30f9 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:41:04.665Z",
+    "level": "info",
+    "message": "Pacing: waiting 19.3s before next job (15/29)"
+  },
+  {
+    "ts": "2026-07-20T17:41:24.015Z",
+    "level": "info",
+    "message": "Processing: \"Software Engineer - Web Application, Front-end (Javascript ...\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:41:27.381Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:41:39.819Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:41:41.240Z",
+    "level": "info",
+    "message": "Custom: filled \"Do you now, or will you in the future, need sponsorship from an employer in order to obtain, extend or renew your authorization to work in the United States?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:41:47.611Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:41:49.630Z",
+    "level": "info",
+    "message": "Custom: filled \"How did you hear about this job?\" with \"LinkedIn\""
+  },
+  {
+    "ts": "2026-07-20T17:41:51.850Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_software_engineer___web_application__front_end__javascript_____2026-07-20T17-41-51-137Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:42:05.531Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:42:05.913Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30f7 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:42:05.971Z",
+    "level": "info",
+    "message": "Pacing: waiting 26.3s before next job (16/29)"
+  },
+  {
+    "ts": "2026-07-20T17:42:32.312Z",
+    "level": "info",
+    "message": "Processing: \"Frontend Developer (React) @ Careerswift\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:42:35.728Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:42:35.775Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:42:38.825Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:42:41.987Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:42:49.014Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:42:49.018Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:43:02.289Z",
+    "level": "warn",
+    "message": "Form elements still present after submit — possible validation block."
+  },
+  {
+    "ts": "2026-07-20T17:43:02.382Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30f5 → \"Failed - Generic form fallback failed\""
+  },
+  {
+    "ts": "2026-07-20T17:43:02.447Z",
+    "level": "info",
+    "message": "Pacing: waiting 18.7s before next job (17/29)"
+  },
+  {
+    "ts": "2026-07-20T17:43:21.140Z",
+    "level": "info",
+    "message": "Processing: \"Senior Full Stack Python/FastApi/React Engineer [REMOTE]\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:43:24.915Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:43:24.963Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:43:38.417Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:43:39.778Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Execution context was destroyed, most likely because of a navigation."
+  },
+  {
+    "ts": "2026-07-20T17:43:39.887Z",
+    "level": "warn",
+    "message": "No form elements found — marking as failed"
+  },
+  {
+    "ts": "2026-07-20T17:43:40.596Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\failed\\jobs_lever_co_senior_full_stack_python_fastapi_react_engineer__remote__2026-07-20T17-43-39-891Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:43:40.700Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30f4 → \"Failed - No form elements found\""
+  },
+  {
+    "ts": "2026-07-20T17:43:40.756Z",
+    "level": "info",
+    "message": "Pacing: waiting 25.4s before next job (18/29)"
+  },
+  {
+    "ts": "2026-07-20T17:44:06.180Z",
+    "level": "info",
+    "message": "Processing: \"Senior Frontend Engineer (Next.js & React, AI-Native)\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:44:09.818Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:44:21.825Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:44:23.714Z",
+    "level": "info",
+    "message": "Custom: filled \"How many years of professional frontend engineering experience do you have?*\" with \"5 years\""
+  },
+  {
+    "ts": "2026-07-20T17:44:26.218Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_senior_frontend_engineer__next_js___react__ai_native__2026-07-20T17-44-25-262Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:44:40.019Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:44:40.420Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30eb → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:44:40.480Z",
+    "level": "info",
+    "message": "Pacing: waiting 28.4s before next job (19/29)"
+  },
+  {
+    "ts": "2026-07-20T17:45:08.896Z",
+    "level": "info",
+    "message": "Processing: \"LATAM Software Engineer(s) (React/.NET)\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:45:12.250Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:45:24.360Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:45:30.928Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile*\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:45:36.518Z",
+    "level": "info",
+    "message": "Custom: filled \"Github*\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:45:39.130Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_latam_software_engineer_s___react__net__2026-07-20T17-45-38-023Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:45:52.848Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:45:53.293Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30ea → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:45:53.343Z",
+    "level": "info",
+    "message": "Pacing: waiting 23.4s before next job (20/29)"
+  },
+  {
+    "ts": "2026-07-20T17:46:16.774Z",
+    "level": "info",
+    "message": "Processing: \"Senior Software Engineer, SDK React Native @ Ditto\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:46:20.645Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:46:20.693Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:46:23.823Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:46:26.917Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:46:33.791Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:46:33.799Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:46:39.963Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:46:53.180Z",
+    "level": "warn",
+    "message": "Form elements still present after submit — possible validation block."
+  },
+  {
+    "ts": "2026-07-20T17:46:53.282Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e9 → \"Failed - Generic form fallback failed\""
+  },
+  {
+    "ts": "2026-07-20T17:46:53.338Z",
+    "level": "info",
+    "message": "Pacing: waiting 15.1s before next job (21/29)"
+  },
+  {
+    "ts": "2026-07-20T17:47:08.492Z",
+    "level": "info",
+    "message": "Processing: \"Job Application for Senior Full Stack Engineer (.NET/React ...\" @ job-boards.eu.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:47:12.141Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:47:24.251Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:47:30.778Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:47:32.108Z",
+    "level": "info",
+    "message": "Custom: filled \"Will you require sponsorship to work in the job required region/country?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:47:34.548Z",
+    "level": "info",
+    "message": "Custom: filled \"What are your gross salary expectations?*\" with \"100,000 USD\""
+  },
+  {
+    "ts": "2026-07-20T17:47:38.261Z",
+    "level": "info",
+    "message": "Custom: filled \"What is your notice period?*\" with \"Immediate / 2 weeks\""
+  },
+  {
+    "ts": "2026-07-20T17:47:40.454Z",
+    "level": "info",
+    "message": "Custom: filled \"How did you hear about this role?*\" with \"LinkedIn\""
+  },
+  {
+    "ts": "2026-07-20T17:47:42.984Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_eu_greenhouse_io_job_application_for_senior_full_stack_engineer___net_react_____2026-07-20T17-47-41-967Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:47:56.701Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:47:57.024Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e6 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:47:57.076Z",
+    "level": "info",
+    "message": "Pacing: waiting 20.4s before next job (22/29)"
+  },
+  {
+    "ts": "2026-07-20T17:48:17.505Z",
+    "level": "info",
+    "message": "Processing: \"Full Stack Software Engineer (TypeScript/React)\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:48:20.840Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:48:33.325Z",
+    "level": "info",
+    "message": "Resume uploaded to Greenhouse"
+  },
+  {
+    "ts": "2026-07-20T17:48:40.266Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile*\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:48:42.767Z",
+    "level": "info",
+    "message": "Custom: filled \"Desired Salary*\" with \"100,000 USD\""
+  },
+  {
+    "ts": "2026-07-20T17:48:43.907Z",
+    "level": "info",
+    "message": "Custom: filled \"Are you legally authorized to work in the United States?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:48:45.062Z",
+    "level": "info",
+    "message": "Custom: filled \"Will you now or in the future require sponsorship for employment?*\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:48:48.043Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_full_stack_software_engineer__typescript_react__2026-07-20T17-48-46-568Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:49:01.911Z",
+    "level": "warn",
+    "message": "Post-submit validation/OTP wall detected."
+  },
+  {
+    "ts": "2026-07-20T17:49:02.375Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e5 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:49:02.445Z",
+    "level": "info",
+    "message": "Pacing: waiting 28.9s before next job (23/29)"
+  },
+  {
+    "ts": "2026-07-20T17:49:31.397Z",
+    "level": "info",
+    "message": "Processing: \"ION Group - Lead UI Engineer (React), New York\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:49:35.179Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:49:35.227Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:49:39.277Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:49:39.342Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Protocol error (Runtime.callFunctionOn): Argument should belong to the same JavaScript world as target object"
+  },
+  {
+    "ts": "2026-07-20T17:49:40.167Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: resume"
+  },
+  {
+    "ts": "2026-07-20T17:49:49.211Z",
+    "level": "info",
+    "message": "Heuristic: filled 4 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:49:55.395Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:49:59.429Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[Portfolio]\" with \"https://yourportfolio.com\""
+  },
+  {
+    "ts": "2026-07-20T17:50:12.541Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:50:12.874Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e3 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:50:12.924Z",
+    "level": "info",
+    "message": "Pacing: waiting 18.3s before next job (24/29)"
+  },
+  {
+    "ts": "2026-07-20T17:50:31.207Z",
+    "level": "info",
+    "message": "Processing: \"Principal Mobile Software Engineer -\" @ job-boards.greenhouse.io"
+  },
+  {
+    "ts": "2026-07-20T17:50:38.283Z",
+    "level": "info",
+    "message": "Greenhouse ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:50:49.214Z",
+    "level": "info",
+    "message": "Custom: selected \"No\" for \"Do you need, or will you need in the future, any immigration-related support or sponsorship from the Company in order to begin or continue employment with the Company? This includes support (such as J-1, F-1 CPT letter or STEM OPT Training Plan), visa sponsorship for employment (H-1B, H-1B1, E-3, O-1, or TN), and any EAD holders that will need longer term employment authorization (temporary work visa or permanent residency).\n    (required)\n  \n  834af5ec\""
+  },
+  {
+    "ts": "2026-07-20T17:50:49.275Z",
+    "level": "info",
+    "message": "Custom: selected \"LinkedIn\" for \"Before applying, how did you hear about Upstart?\n    (required)\n  \n  c6bdc8a0\""
+  },
+  {
+    "ts": "2026-07-20T17:50:55.287Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn Profile\n    (required)\n  \n  948824fd\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:50:59.766Z",
+    "level": "info",
+    "message": "Screenshot saved: D:\\remote-job-bot-scrapper\\screenshots\\applied\\job_boards_greenhouse_io_principal_mobile_software_engineer___2026-07-20T17-50-56-796Z.png"
+  },
+  {
+    "ts": "2026-07-20T17:51:13.604Z",
+    "level": "warn",
+    "message": "Form elements still present after submit — possible validation block."
+  },
+  {
+    "ts": "2026-07-20T17:51:14.000Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e2 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:51:14.050Z",
+    "level": "info",
+    "message": "Pacing: waiting 27.8s before next job (25/29)"
+  },
+  {
+    "ts": "2026-07-20T17:51:41.870Z",
+    "level": "info",
+    "message": "Processing: \"Senior Software Engineer - Frontend/React (USA Only\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:51:45.896Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:51:45.943Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:51:49.013Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:51:52.083Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:51:59.275Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:51:59.282Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:52:05.355Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:52:10.417Z",
+    "level": "info",
+    "message": "Custom: filled \"GitHub\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:52:12.331Z",
+    "level": "info",
+    "message": "Custom: filled \"Where did you hear about this role? If you heard about this role from a current Close team member, please share their name here.\" with \"LinkedIn\""
+  },
+  {
+    "ts": "2026-07-20T17:52:13.455Z",
+    "level": "info",
+    "message": "Custom: filled \"Can you legally work in the US? Please explain if you have a visa.\" with \"No\""
+  },
+  {
+    "ts": "2026-07-20T17:52:15.215Z",
+    "level": "info",
+    "message": "Custom: filled \"Briefly describe your experience working remotely.\" with \"5 years\""
+  },
+  {
+    "ts": "2026-07-20T17:52:28.536Z",
+    "level": "info",
+    "message": "No explicit success/failure indicators — assuming applied."
+  },
+  {
+    "ts": "2026-07-20T17:52:29.000Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30e0 → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:52:29.087Z",
+    "level": "info",
+    "message": "Pacing: waiting 25.9s before next job (26/29)"
+  },
+  {
+    "ts": "2026-07-20T17:52:55.029Z",
+    "level": "info",
+    "message": "Processing: \"Product Engineer, React @ Known\" @ jobs.ashbyhq.com"
+  },
+  {
+    "ts": "2026-07-20T17:52:58.161Z",
+    "level": "info",
+    "message": "Ashby ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:52:58.212Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:53:01.214Z",
+    "level": "info",
+    "message": "Clicking Application tab / Apply button on Ashby..."
+  },
+  {
+    "ts": "2026-07-20T17:53:04.204Z",
+    "level": "warn",
+    "message": "Ashby handler failed — falling back to heuristic: Could not find First Name field via advanced selectors."
+  },
+  {
+    "ts": "2026-07-20T17:53:11.001Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: _systemfield_resume"
+  },
+  {
+    "ts": "2026-07-20T17:53:11.012Z",
+    "level": "info",
+    "message": "Heuristic: filled 3 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:53:17.282Z",
+    "level": "info",
+    "message": "Custom: filled \"LinkedIn URL\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:53:30.461Z",
+    "level": "info",
+    "message": "No explicit success/failure indicators — assuming applied."
+  },
+  {
+    "ts": "2026-07-20T17:53:30.797Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30de → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:53:30.840Z",
+    "level": "info",
+    "message": "Pacing: waiting 26.2s before next job (27/29)"
+  },
+  {
+    "ts": "2026-07-20T17:53:57.060Z",
+    "level": "info",
+    "message": "Processing: \"Principal Full Stack Developer with React (Remote, Global)\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:54:00.730Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:54:00.780Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:54:04.725Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:54:04.773Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Protocol error (Runtime.callFunctionOn): Argument should belong to the same JavaScript world as target object"
+  },
+  {
+    "ts": "2026-07-20T17:54:05.564Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: resume"
+  },
+  {
+    "ts": "2026-07-20T17:54:14.481Z",
+    "level": "info",
+    "message": "Heuristic: filled 4 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:54:20.548Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:54:25.316Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[GitHub]\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:54:29.339Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[Portfolio]\" with \"https://yourportfolio.com\""
+  },
+  {
+    "ts": "2026-07-20T17:54:42.479Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:54:42.832Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30dd → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:54:42.877Z",
+    "level": "info",
+    "message": "Pacing: waiting 28.8s before next job (28/29)"
+  },
+  {
+    "ts": "2026-07-20T17:55:11.716Z",
+    "level": "info",
+    "message": "Processing: \"Frontend Developer (React, TypeScript) - Relay\" @ jobs.lever.co"
+  },
+  {
+    "ts": "2026-07-20T17:55:15.048Z",
+    "level": "info",
+    "message": "Lever ATS detected – using dedicated selectors"
+  },
+  {
+    "ts": "2026-07-20T17:55:15.096Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:55:19.213Z",
+    "level": "info",
+    "message": "Clicking \"Apply for this job\" on Lever..."
+  },
+  {
+    "ts": "2026-07-20T17:55:19.278Z",
+    "level": "warn",
+    "message": "Lever handler failed — falling back to heuristic: Protocol error (Runtime.callFunctionOn): Argument should belong to the same JavaScript world as target object"
+  },
+  {
+    "ts": "2026-07-20T17:55:20.134Z",
+    "level": "info",
+    "message": "Resume uploaded to file input: resume"
+  },
+  {
+    "ts": "2026-07-20T17:55:29.161Z",
+    "level": "info",
+    "message": "Heuristic: filled 4 fields (resume: true)"
+  },
+  {
+    "ts": "2026-07-20T17:55:35.376Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[LinkedIn]\" with \"https://www.linkedin.com/in/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:55:40.257Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[GitHub]\" with \"https://github.com/yourprofile\""
+  },
+  {
+    "ts": "2026-07-20T17:55:44.310Z",
+    "level": "info",
+    "message": "Custom: filled \"urls[Portfolio]\" with \"https://yourportfolio.com\""
+  },
+  {
+    "ts": "2026-07-20T17:55:57.437Z",
+    "level": "info",
+    "message": "Application confirmed via success indicators."
+  },
+  {
+    "ts": "2026-07-20T17:55:57.772Z",
+    "level": "info",
+    "message": "DB: 6a5e3cd97401ca9a58ae30dc → \"Applied\""
+  },
+  {
+    "ts": "2026-07-20T17:55:57.817Z",
+    "level": "info",
+    "message": "All 29 jobs processed."
+  }
+]

@@ -1,0 +1,316 @@
+{
+  "firstName": "Adnan",
+  "Name": "Adnan",
+  "middleName": "",
+  "lastName": "Mustafa",
+  "fullName": "Adnan Mustafa",
+  "preferredName": "Adnan",
+  "email": "adnan.mustafa.devs@gmail.com",
+  "emailAlt": "adnan.mustafa.dev@gmail.com",
+  "confirmEmail": "adnan.mustafa.dev@gmail.com",
+  "phone": "+92 342 2187767",
+  "phoneDigits": "923422187767",
+  "phoneLocal": "3422187767",
+  "phoneDeviceType": "Mobile",
+
+  "dateOfBirth": "1999-08-28",
+  "dobMonth": "August",
+  "dobDay": "28",
+  "dobYear": "1999",
+  "ageRange": "26-40",
+  "gender": "Male",
+  "sex": "Male",
+  "pronouns": "He/Him",
+  "nationality": "Pakistan",
+  "maritalStatus": "Single",
+  "sexualOrientation": "Prefer not to disclose",
+  "hispanicLatino": "No",
+
+  "location": "Karachi, Pakistan",
+  "address": "House No 1005, Street No 10, Akhter Colony, Karachi, Pakistan",
+  "fullAddress": "House No 1005, Street No 10, Akhter Colony, Karachi, Pakistan",
+  "addressLine1": "House No 1005, Street No 10",
+  "addressLine2": "Akhter Colony",
+  "street": "House No 1005, Street No 10",
+  "city": "Karachi",
+  "state": "Sindh",
+  "postalCode": "7580",
+  "zip": "7580",
+  "country": "Pakistan",
+  "countryCode": "PK",
+
+  "linkedin": "https://www.linkedin.com/in/adnan-khan-612a62235/",
+  "github": "https://github.com/adnan4498",
+  "portfolio": "",
+  "website": "",
+  "twitter": "",
+
+  "highestDegree": "Bachelor's Degree",
+  "degree": "Bachelor's Degree",
+  "fieldOfStudy": "Software Engineering",
+  "discipline": "Computer Science / Software Engineering",
+  "university": "Ilma University",
+  "universityLocation": "Karachi, Pakistan",
+  "universityStartYear": "2021",
+  "universityEndYear": "2025",
+  "graduationYear": "2025",
+  "gpa": "3.0",
+  "educationLevel": "Bachelor's Degree",
+
+  "currentTitle": "Full Stack Engineer",
+  "currentEmployer": "Imperial Solutions",
+  "currentStartDate": "2025-10",
+  "yearsExperience": "4",
+  "frontendYears": "4",
+  "backendYears": "4",
+  "fullstackYears": "4",
+  "noticePeriod": "7 days",
+  "noticePeriodText": "Available on 7 days' notice",
+  "availableFrom": "Immediately",
+  "earliestStartDate": "Immediately",
+
+  "currentSalary": "2200",
+  "expectedSalary": "3000",
+  "desiredSalary": "3500",
+  "salaryCurrency": "USD",
+  "salaryFrequency": "Monthly",
+  "compMonthlyUSD": "3500",
+  "comp40hUSD": "3500",
+  "comp20hUSD": "1800",
+  "compMonthlySGD": "4500",
+  "compYearlyPLN": "170000",
+  "compYearlyEUR": "50000",
+  "compAnnuallyLocal": "36000",
+  "compensationTarget": "3500",
+  "salaryExpectations": "Open to negotiation based on total benefits and role scope.",
+  "salaryExpectationsRange": "36000 - 45000",
+
+  "reasonForLeaving": "Seeking a role with a global team where I can work on larger-scale systems and contribute to products with international reach.",
+  "currentSector": "Software Development / IT Services",
+  "workPreference": "Remote",
+  "preferredContractType": "Work Contract",
+  "availabilityDays": "Full Time (6 days / week)",
+
+  "authorizedCountry": "Pakistan",
+  "workAuthorization": "Yes",
+  "authorizedInCountry": "Yes",
+  "requiresSponsorship": "No",
+  "futureSponsorship": "No",
+  "visaType": "None",
+  "requiresVisaSponsorship": "No",
+
+  "workAuthorizationByCountry": {
+    "Pakistan": "Yes",
+    "United States": "No",
+    "USA": "No",
+    "US": "No",
+    "Canada": "No",
+    "Ontario": "No",
+    "United Kingdom": "No",
+    "UK": "No",
+    "Germany": "No",
+    "Deutschland": "No",
+    "Poland": "No",
+    "Australia": "No",
+    "Singapore": "No",
+    "EU": "No",
+    "European Union": "No"
+  },
+  "sponsorshipByCountry": {
+    "Pakistan": "No",
+    "United States": "No",
+    "USA": "No",
+    "US": "No",
+    "Canada": "No",
+    "United Kingdom": "No",
+    "UK": "No",
+    "Germany": "No",
+    "Poland": "No",
+    "Australia": "No",
+    "Singapore": "No",
+    "EU": "No"
+  },
+
+  "willingToRelocate": "Yes",
+  "willingToTravel": "Yes",
+  "willingToRelocateByCountry": {
+    "Germany": "Yes",
+    "Deutschland": "Yes",
+    "Canada": "Yes",
+    "Ontario": "Yes",
+    "Poland": "Yes",
+    "United Kingdom": "Yes",
+    "UK": "Yes",
+    "United States": "Yes",
+    "USA": "Yes",
+    "US": "Yes"
+  },
+  "willingToWorkOnsite": "No",
+  "willingToWorkInOffice": "No",
+  "availableToWorkEST": "Yes",
+  "availableToWorkUSHours": "Yes",
+  "timezonesAvailable": ["UK", "Europe", "US"],
+
+  "languages": [{ "language": "English", "proficiency": "Native / Bilingual" }],
+  "englishProficiency": "Native / Bilingual",
+  "englishLevel": "Advanced",
+  "germanProficiency": "None",
+  "frenchProficiency": "None",
+  "businessLanguages": "English",
+  "languagesUsedInWork": "English",
+
+  "eeoRace": "Prefer not to disclose",
+  "race": "Prefer not to disclose",
+  "ethnicity": "Prefer not to disclose",
+  "eeoVeteran": "I am not a protected veteran",
+  "veteranStatus": "I am not a protected veteran",
+  "eeoDisability": "No, I do not have a disability",
+  "disabilityStatus": "No, I do not have a disability",
+  "eeoGender": "Male",
+  "eeoSex": "Male",
+
+  "resumeUrl": "/data/cv-adnan-mustafa-software-engineer.pdf",
+  "coverLetterUrl": "",
+
+  "summary": "Senior Full-Stack Engineer with 4+ years of experience building high-performance web applications with React, Next.js, and Node.js/Express. Experienced in owning products end-to-end, with a focus on scalable architecture and production-ready software.",
+
+  "technicalSkills": "TypeScript, JavaScript, Node.js, React, Next.js (App Router), Express.js, Convex, Tailwind CSS, MongoDB, PostgreSQL, Prisma ORM, REST APIs, Serverless functions, Real-time data, LLM API integrations (Claude/Cursor), Zustand, ReactFlow, Vitest, Supertest, Docker, AWS",
+
+  "toolsUsed": "React, Next.js, Node.js, TypeScript, JavaScript, Express.js, MongoDB, PostgreSQL, Prisma, Tailwind CSS, Git, Cursor, Claude, DeepSeek, Postman, Vercel, Docker",
+
+  "industriesWorkedIn": "Tech, SaaS, Web Development, AI Tools Integration",
+
+  "preferredCompanyType": ["Startup", "Scale-up", "Open to all"],
+
+  "howDidYouHear": "LinkedIn",
+  "howDidYouHearDetail": "LinkedIn",
+
+  "aiTools": [
+    "Cursor / VS Code with LLMs: Used daily for accelerated code generation, automated refactoring, and debugging complex architectural logic.",
+    "DeepSeek / Claude: Used for advanced prompt engineering, architectural planning, and optimizing performance bottlenecks in full-stack B2B SaaS applications."
+  ],
+  "aiFrequency": "Daily",
+  "aiUsageStatement": "I use AI as a core part of my daily workflow.",
+  "aiToolsDescription": "Cursor / VS Code with LLMs: Used daily for accelerated code generation, automated refactoring, and debugging complex architectural logic.\n\nDeepSeek / Claude: Used for advanced prompt engineering, architectural planning, and optimizing performance bottlenecks in full-stack B2B SaaS applications.",
+
+  "workedAtCompanies": [
+    "T-Mobile",
+    "Imperial Solutions",
+    "Symmetry Digital",
+    "Zapdas Solutions"
+  ],
+
+  "consents": {
+    "privacy": true,
+    "privacyNotice": true,
+    "gdpr": true,
+    "dataProcessing": true,
+    "dataStorage": true,
+    "terms": true,
+    "termsAndConditions": true,
+    "consentToProcess": true,
+    "futureOpportunities": true,
+    "talentPool": true,
+    "sms": true,
+    "smsConsent": true,
+    "marketingVideo": true,
+    "marketingEmail": false,
+    "newsletter": false,
+    "subscribe": false,
+    "whatsapp": true
+  },
+
+  "skillClaims": {
+    "node": "Yes",
+    "react": "Yes",
+    "typescript": "Yes",
+    "javascript": "Yes",
+    "nextjs": "Yes",
+    "next.js": "Yes",
+    "express": "Yes",
+    "mongodb": "Yes",
+    "postgresql": "Yes",
+    "sql": "Yes",
+    "aws": "Yes",
+    "docker": "Yes",
+    "tailwind": "Yes",
+    "git": "Yes",
+    "rest": "Yes",
+    "graphql": "Yes",
+    "zustand": "Yes",
+    "redux": "Yes",
+    "prisma": "Yes",
+    "convex": "Yes",
+    "serverless": "Yes",
+    "llm": "Yes",
+    "ai": "Yes",
+    "python": "Yes",
+    "java": "No",
+    "c++": "No",
+    "cpp": "No",
+    "golang": "No",
+    "go": "No",
+    "rust": "No",
+    "ruby": "No",
+    "php": "No",
+    "c#": "Yes",
+    "dotnet": "No",
+    "kotlin": "No",
+    "swift": "No",
+    "flutter": "No",
+    "dart": "No",
+    "angular": "Yes",
+    "vue": "No",
+    "svelte": "No"
+  },
+
+  "longForm": {
+    "whyInterested": "I'm excited about this role because it aligns with the last 4+ years of my career: building production-grade React and Node.js applications. I've shipped high-traffic platforms for enterprise clients, architected multi-tenant SaaS systems with complex authorization layers, and consistently delivered scalable, well-tested solutions. The chance to bring that experience to your team while continuing to work on modern full-stack challenges is exactly what I'm looking for.",
+
+    "tellAboutYourself": "I'm a Senior Full-Stack Engineer with 4+ years of experience specializing in React, Next.js, and Node.js. Most recently at Imperial Solutions, I architected a multi-tenant SaaS platform with 6-tier RBAC and built a WhatsApp messaging engine handling high-volume concurrent workloads. Before that, I shipped production platforms for enterprise clients at Symmetry Digital (including Jazz and Onic.pk), where I also built an internal visual chatbot builder from scratch. I focus on clean architecture, test coverage, and shipping software that holds up in production.",
+
+    "whyThisCompanyTemplate": "Dear Hiring Team at {{company}},\n\nI'm reaching out about the {{title}} position. The work your team is doing aligns with where I've spent my career: building scalable, production-ready web applications.\n\nOver the past 4+ years I've shipped high-traffic platforms and complex multi-tenant systems using React, Next.js, and Node.js. I'm particularly drawn to teams that value engineering depth and clean architecture — both areas where I've consistently delivered.\n\nI'd welcome the chance to discuss how I can contribute to what you're building at {{company}}.\n\nBest regards,\nAdnan Mustafa",
+
+    "coverLetterTemplate": "Dear Hiring Team at {{company}},\n\nI am writing to express my strong interest in the {{title}} position. With 4+ years of hands-on experience building performance-optimized frontend architectures and scalable Node.js backend systems, I believe I can bring real value to your team.\n\nAt Imperial Solutions, I architected a multi-tenant SaaS platform featuring a 6-tier RBAC authorization layer, WhatsApp bulk-messaging engine, and a production-grade Event Reservation API — including pessimistic row locking to prevent overbooking under concurrent load. Previously at Symmetry Digital, I shipped high-traffic web platforms for enterprise clients including Jazz and Onic.pk, and single-handedly built an internal visual chatbot builder using ReactFlow.\n\nI'd love the opportunity to discuss how my background fits what you're building at {{company}}.\n\nBest regards,\nAdnan Mustafa",
+
+    "salaryExpectations": "Negotiable. Happy to discuss in the interview based on the full scope of the role.",
+
+    "challengingProject": "At Symmetry Digital, I single-handedly built an internal visual chatbot builder using ReactFlow and Vite.js. The challenge was rendering hundreds of interconnected nodes without dropping frame rate during drag operations. I solved it by implementing node-level memoization, virtualizing offscreen nodes, and batching state updates through Zustand instead of component state. The tool shipped to the team and eliminated a significant amount of manual configuration work — reducing our reliance on external tools and giving the team full control over the chatbot logic.",
+
+    "mostImpactfulFrontendFeature": "At Symmetry Digital, I single-handedly built an internal visual chatbot builder using ReactFlow and Vite.js. The main challenge was rendering hundreds of interconnected nodes without dropping frame rate during drag operations. I solved it by implementing node-level memoization, virtualizing offscreen nodes, and batching state updates through Zustand instead of component state. The tool shipped to the team and eliminated manual configuration work, reducing reliance on external tools.",
+
+    "yearsAndProjects": "I have 4+ years of professional software engineering experience specializing in B2B SaaS applications, multi-tenant systems, RBAC architectures, and performance-critical frontend products using React, Next.js, Node.js, and Zustand. My work includes architecting multi-tenant SaaS platforms with complex authorization layers (such as a 6-tier RBAC system), building high-traffic enterprise web platforms for clients like Jazz and Onic.pk, and developing backend engines handling high-volume concurrent workloads.",
+
+    "b2bSaasExperience": "At Imperial Solutions, I architected a multi-tenant SaaS platform where my main responsibilities included designing backend schemas, controller logic, commission resolvers, and building connected frontend dashboards and mobile apps. I enjoyed designing scalable authorization layers and optimizing backend performance to handle concurrent user loads cleanly.",
+
+    "frontendOwnershipStory": "At Symmetry Digital, I took full ownership of the visual chatbot builder project using ReactFlow. The major challenge was performance bottlenecking when rendering complex node networks. I addressed this by introducing Zustand for batched state updates and virtualizing offscreen nodes, which maintained smooth 60fps drag operations.",
+
+    "nextjsReactTsExperience": "Built production-grade web applications and visual workflow builders utilizing Next.js (App Router), React, and TypeScript. Exercised full architectural ownership of the frontend layer, ensuring high performance, component modularity, and smooth state management via Zustand.",
+
+    "productionFullStackProject": "Developed a multi-tenant B2B SaaS platform featuring real-time data synchronization, fee tracking, and role-based access control. Personally responsible for architecting the full-stack system, including Node.js/TypeScript backend APIs, database optimizations, and responsive React/Next.js frontend dashboards using Zustand and Tailwind CSS.",
+
+    "llmIntegrationProject": "Integrated Claude LLM APIs into backend workflows to automate data processing and intelligent content generation. Ensured reliability by implementing robust error handling, schema validations, and fallback mechanisms within TypeScript serverless functions.",
+
+    "aiInWork": "I utilize AI daily as an integral part of my workflow for rapid feature scaffolding, automated code refactoring, complex logic debugging, and backend architecture planning, which significantly enhances my development velocity and output quality.",
+
+    "aiCodingAgents": "I use Cursor and LLM-powered coding assistants daily for rapid feature scaffolding, writing unit tests, and optimizing performance bottlenecks. To verify correctness, I manually review generated code against architectural patterns, run comprehensive test suites, and test edge cases thoroughly before deployment.",
+
+    "backendScaleStory": "I engineered a high-volume data-scraping and communication backend system designed to orchestrate automated outreach campaigns and process large datasets concurrently.\n\nArchitecture: Developed using Node.js and TypeScript, utilizing queue-based asynchronous processing to handle rate limits and prevent socket timeouts. Integrated the Baileys library for direct messaging automation with Spintax formatting.\n\nTrade-offs: Opted for asynchronous worker queues over synchronous batch processing to ensure system resilience and prevent memory overflows when processing thousands of targets concurrently. This added architectural complexity in error handling and state tracking but ensured uninterrupted execution.",
+
+    "debuggingStory": "I resolved a critical production bottleneck where API response times spiked intermittently during high-frequency data synchronization between the Node.js backend and external database instances.\n\nApproach: I systematically traced logs across the API gateway, controller middleware, and database query execution plans using performance monitoring tools and Postman simulations. I identified unindexed queries causing full collection scans under high loads.\n\nOutcome: Added targeted compound indexes, optimized payload sizes, and implemented caching layers, which reduced average response times by over 60% and completely eliminated timeout errors.",
+
+    "failedProjectLesson": "Early in a multi-tenant SaaS project, I attempted to build a heavily customized real-time notification syncing feature using custom WebSockets without a robust reconnection or fallback mechanism.\n\nUnder fluctuating network conditions, the connections dropped frequently, leading to missed updates, orphaned socket states, and performance overhead on the Node.js server.\n\nI learned the critical importance of relying on battle-tested architectural patterns and proper state management libraries rather than over-engineering custom transport layers prematurely. Moving forward, I shifted to structured queueing and resilient polling/event-driven patterns to guarantee data consistency and system stability.",
+
+    "scalableDataStructures": "Architected a multi-tenant SaaS gym management platform handling concurrent member attendance logging, fee bucket tracking, and automated commission resolvers. Engineered optimized MongoDB schemas with indexed queries and async worker queues to ensure high throughput and sub-millisecond response times under heavy concurrent loads.",
+
+    "anythingElse": "Proven Execution: Bring over 4 years of professional full-stack expertise specializing in React, Next.js, TypeScript, and Node.js architectures.\n\nAI-Driven Velocity: Leverage advanced AI tooling daily to accelerate software delivery, optimize code quality, and solve complex multi-layered scaling challenges.\n\nCommitment: Fully dedicated to remote execution, aligning with high standards of reliability, performance optimization, and long-end value delivery.",
+
+    "whyThisRoleExcites": "What excites me most about this role is the opportunity to build high-performance, design-driven digital products and scalable web applications using modern tech stacks like React and Next.js. I am energized by teams that focus on combining clean code architecture with seamless user experiences to help businesses scale. Being able to apply my full-stack expertise and passion for modern web technologies to craft impactful, high-performance solutions is what drives me to join this team.",
+
+    "whyQuantumLoopAI": "I want to work at QuantumLoopAI because of your cutting-edge approach to merging scalable full-stack software development with advanced AI capabilities. I have spent over four years building robust web applications, optimizing performance, and integrating LLMs to deliver real-world business value. QuantumLoopAI's mission aligns with my passion for engineering high-impact, user-centric systems using modern TypeScript ecosystems. I am eager to bring my expertise in full-stack architecture, API integrations, and proactive problem-solving to help scale your engineering initiatives and contribute meaningfully from day one.",
+
+    "languagesStacksFrameworks": "TypeScript, JavaScript, Node.js, React, Next.js (App Router), Convex, Tailwind CSS, Express.js, MongoDB, PostgreSQL, Prisma, Zustand, ReactFlow, Vitest, Supertest, Docker, and LLM API Integrations (Claude/Cursor)",
+
+    "englishProficiencyStatement": "Native / Bilingual – English is my first language or I speak it at a native level with complete fluency."
+  }
+}

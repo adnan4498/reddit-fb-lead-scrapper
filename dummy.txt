@@ -1,0 +1,30 @@
+* Aggregators = 
+
+We Work Remotely
+Remote OK
+Remotive
+Arbeitnow
+Himalayas
+Jobicy
+4 Day Week
+AI Dev Jobs
+Adzuna
+Jooble
+Reed
+Careerjet
+JSearch
+TheirStackJob 
+Data Lake
+WhatJobs
+Findwork
+SerpApi Google Jobs
+Serper Google Jobs
+Y Combinator 
+ 
+* Premium platforms = 
+indeed, 
+dice, 
+careerbuilder, 
+simplyhired, 
+glassdoor, 
+linkedin.

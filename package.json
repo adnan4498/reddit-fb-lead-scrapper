@@ -1,0 +1,32 @@
+{
+  "name": "remote-job-bot-scrapper",
+  "version": "1.0.0",
+  "description": "Local automated job aggregation pipeline and tracking dashboard",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --ignore scrape-logs.json src/server.js",
+    "clean": "node src/utils/clearDb.js",
+    "test:aggregators": "node src/scripts/testAggregators.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "multer": "^2.2.0",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.1.14",
+    "openai": "^4.73.0",
+    "playwright": "^1.61.1",
+    "puppeteer": "^25.3.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "rss-parser": "^3.13.0",
+    "xml2js": "^0.6.2"
+  }
+}

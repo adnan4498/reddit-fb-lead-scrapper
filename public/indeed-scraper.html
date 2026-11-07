@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Scraper Panel</title>
+    <style>
+      :root {
+        --bg: #f5f6fa;
+        --surface: #ffffff;
+        --primary: #6c5ce7;
+        --primary-dark: #5a4bd1;
+        --indeed: #2164f3;
+        --glassdoor: #0caa41;
+        --text: #2d3436;
+        --text-secondary: #636e72;
+        --text-muted: #b2bec3;
+        --border: #dfe6e9;
+        --radius: 8px;
+        --radius-sm: 4px;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        padding: 24px;
+      }
+      h1 {
+        font-size: 20px;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+      .subtitle {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+      }
+      .banner {
+        background: #fef3c7;
+        border: 1px solid #f59e0b;
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        font-size: 13px;
+        color: #92400e;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .banner strong {
+        color: #78350f;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 16px;
+        box-shadow: var(--shadow);
+      }
+      .card h2 {
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 20px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 150ms;
+        white-space: nowrap;
+      }
+      .btn:hover:not(:disabled) {
+        background: #f0f0f5;
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary-dark);
+      }
+      .btn.primary:hover:not(:disabled) {
+        background: var(--primary-dark);
+      }
+      .btn.danger {
+        background: #e74c3c;
+        color: #fff;
+        border-color: #c0392b;
+      }
+      .btn.danger:hover:not(:disabled) {
+        background: #c0392b;
+      }
+      .btn.warn {
+        background: #f59e0b;
+        color: #fff;
+        border-color: #d97706;
+      }
+      .btn.warn:hover:not(:disabled) {
+        background: #d97706;
+      }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .stat {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 12px;
+        text-align: center;
+      }
+      .stat .value {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .stat .label {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+      .platform-badges {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .platform-badge {
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .platform-badge.indeed {
+        background: #e8f0fe;
+        color: #174ea6;
+        border: 1px solid #d2e3fc;
+      }
+      .platform-badge.glassdoor {
+        background: #e6f4ea;
+        color: #137333;
+        border: 1px solid #ceead6;
+      }
+      .platform-badge.simplyhired {
+        background: #e8f5e9;
+        color: #1b5e20;
+        border: 1px solid #a5d6a7;
+      }
+      .platform-badge.dice {
+        background: #ede9fe;
+        color: #5b21b6;
+        border: 1px solid #ddd6fe;
+      }
+      .platform-badge.careerbuilder {
+        background: #fce4ec;
+        color: #b71c1c;
+        border: 1px solid #f8bbd0;
+      }
+      .platform-badge.linkedin {
+        background: #e8f5e9;
+        color: #1b5e20;
+        border: 1px solid #a5d6a7;
+      }
+      .platform-badge.active {
+        opacity: 1;
+        box-shadow: 0 0 0 2px currentColor;
+      }
+      .platform-badge.done {
+        opacity: 0.5;
+        text-decoration: line-through;
+      }
+      .progress {
+        margin: 12px 0;
+      }
+      .progress-bar {
+        height: 6px;
+        background: #eee;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+      .progress-fill {
+        height: 100%;
+        background: var(--primary);
+        transition: width 200ms;
+        border-radius: 3px;
+      }
+      .progress-text {
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+      .log {
+        background: #1e1e2e;
+        color: #cdd6f4;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        padding: 12px;
+        border-radius: var(--radius-sm);
+        max-height: 300px;
+        overflow-y: auto;
+        margin-top: 12px;
+        line-height: 1.6;
+      }
+      .log .entry {
+        margin: 2px 0;
+      }
+      .log .success {
+        color: #a6e3a1;
+      }
+      .log .error {
+        color: #f38ba8;
+      }
+      .log .warn {
+        color: #f9e2af;
+      }
+      .log .info {
+        color: #89b4fa;
+      }
+      .notice {
+        font-size: 13px;
+        color: var(--text-secondary);
+        margin-top: 12px;
+        padding: 10px;
+        background: #fef9e7;
+        border-radius: var(--radius-sm);
+        border-left: 3px solid #f9e2af;
+      }
+      a.back {
+        font-size: 13px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+      a.back:hover {
+        color: var(--primary);
+      }
+      .loop-status {
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+      .loop-status.idle {
+        background: #f0f0f5;
+        color: var(--text-secondary);
+      }
+      .loop-status.running {
+        background: #ecfdf5;
+        color: #0d6b3e;
+        border: 1px solid #a6e3a1;
+      }
+      .loop-status.stopped {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+      }
+      .countdown-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--primary);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        animation: pulse 1s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="back" href="./dashboard.html">&larr; Back to Dashboard</a>
+    <h1>Multi-Platform Job Scraper</h1>
+    <p class="subtitle">
+      Sequential: Indeed first, then Glassdoor. Polls backend for completion,
+      auto-advances.
+    </p>
+
+    <div class="banner">
+      <span>&#9888;</span>
+      <span
+        >Pop-up blocker must be <strong>disabled</strong> or this site
+        <strong>allowed</strong> for <code>http://localhost:3000</code>.</span
+      >
+    </div>
+
+    <div class="platform-badges">
+      <div class="platform-badge simplyhired" id="badgeSimplyHired">
+        SimplyHired
+      </div>
+      <div class="platform-badge dice" id="badgeDice">Dice</div>
+      <div class="platform-badge careerbuilder" id="badgeCareerBuilder">
+        CareerBuilder
+      </div>
+      <div class="platform-badge glassdoor" id="badgeGlassdoor">Glassdoor</div>
+      <div class="platform-badge indeed" id="badgeIndeed">Indeed</div>
+      <div class="platform-badge linkedin" id="badgeLinkedIn">LinkedIn</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="value" id="activePlatform">-</div>
+        <div class="label">Active Platform</div>
+      </div>
+      <div class="stat">
+        <div class="value" id="totalTargets">-</div>
+        <div class="label">Platform Targets</div>
+      </div>
+      <div class="stat">
+        <div class="value" id="currentIdx">-</div>
+        <div class="label">Platform Index</div>
+      </div>
+      <div class="stat">
+        <div class="value" id="remaining">-</div>
+        <div class="label">Remaining</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Automated Loop</h2>
+      <div class="progress">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+        <div class="progress-text" id="progressLabel">Ready</div>
+      </div>
+      <div class="btn-row" id="buttonRow">
+        <div class="countdown-badge" id="countdownBadge">Auto-start in 5s</div>
+        <button class="btn warn" id="btnCancelCountdown">
+          Cancel Auto-Start
+        </button>
+        <button class="btn primary" id="btnStartLoop" style="display: none">
+          Start Automated Loop
+        </button>
+        <button class="btn" id="btnStopLoop" style="display: none">
+          Stop Loop
+        </button>
+        <button class="btn danger" id="btnReset" style="display: none">
+          Reset All
+        </button>
+      </div>
+      <div class="loop-status idle" id="loopStatus">
+        Countdown — auto-starting in 5 seconds...
+      </div>
+      <div class="notice">
+        Both Tampermonkey scripts must be installed (Indeed + Glassdoor).
+        Backend at localhost:3000 coordinates everything. Progress is saved to
+        localStorage.
+      </div>
+    </div>
+
+    <div class="log" id="log">
+      <div class="entry">
+        Starting countdown... click "Cancel Auto-Start" for manual control.
+      </div>
+    </div>
+
+    <script>
+      // ── BACKGROUND TAB OPENER BRIDGE ────────────────────────────────────
+      // Talks to tab-opener.user.js via window.postMessage. That userscript
+      // uses GM_openInTab(url, { active:false }) — the only reliable way to
+      // open a background tab in Chrome without stealing focus from the
+      // worker's dashboard. If the userscript is not installed, we fall
+      // back to the legacy window.open() behavior (which steals focus).
+      var BG_TAB_BRIDGE_ENABLED = true;
+      var BG_TAB_ACK_TIMEOUT_MS = 1500;
+      var _bgTabAcks = {};              // id -> { resolve, timerId }
+      var _bgTabCloseCallbacks = {};    // id -> fn()
+
+      function _nextBgTabId() {
+        return (
+          "bg-" +
+          Date.now() +
+          "-" +
+          Math.floor(Math.random() * 1000000)
+        );
+      }
+
+      function openBackgroundTab(url) {
+        // Resolves to { ok: true, id, via: "userscript" }
+        //          or   { ok: false, via: "<reason>" }
+        return new Promise(function (resolve) {
+          if (!BG_TAB_BRIDGE_ENABLED) {
+            return resolve({ ok: false, via: "disabled" });
+          }
+          var id = _nextBgTabId();
+          var settled = false;
+
+          var timerId = setTimeout(function () {
+            if (settled) return;
+            settled = true;
+            delete _bgTabAcks[id];
+            resolve({ ok: false, via: "no-bridge" });
+          }, BG_TAB_ACK_TIMEOUT_MS);
+
+          _bgTabAcks[id] = {
+            resolve: function (ok) {
+              if (settled) return;
+              settled = true;
+              resolve({ ok: !!ok, id: id, via: "userscript" });
+            },
+            timerId: timerId,
+          };
+
+          try {
+            window.postMessage(
+              { type: "TM_OPEN_TAB", id: id, url: url, active: false },
+              "*",
+            );
+          } catch (e) {
+            clearTimeout(timerId);
+            delete _bgTabAcks[id];
+            if (!settled) {
+              settled = true;
+              resolve({ ok: false, via: "postMessage-error" });
+            }
+          }
+        });
+      }
+
+      function closeBackgroundTab(id) {
+        if (!id) return;
+        try {
+          window.postMessage({ type: "TM_CLOSE_TAB", id: id }, "*");
+        } catch (e) {}
+      }
+
+      window.addEventListener("message", function (e) {
+        var d = e && e.data;
+        if (!d || typeof d !== "object") return;
+
+        if (d.type === "TM_OPEN_TAB_ACK" || d.type === "TM_CLOSE_TAB_ACK") {
+          var p = _bgTabAcks[d.id];
+          if (p) {
+            clearTimeout(p.timerId);
+            delete _bgTabAcks[d.id];
+            p.resolve(!!d.ok);
+          }
+          return;
+        }
+
+        if (d.type === "TM_TAB_CLOSED") {
+          var cb = _bgTabCloseCallbacks[d.id];
+          if (typeof cb === "function") {
+            delete _bgTabCloseCallbacks[d.id];
+            cb();
+          }
+        }
+      });
+      // ────────────────────────────────────────────────────────────────────
+
+      // ── ENABLE / DISABLE PLATFORMS ──────────────────────────────────────
+      var ENABLED_PLATFORMS = [
+        // "indeed",
+        "linkedin",
+        // "glassdoor",
+        // "simplyhired",
+        // "dice",
+        // "careerbuilder", dead platform
+      ];
+      // ─────────────────────────────────────────────────────────────────────
+
+      var SEARCH_KEYWORDS = [
+        "React js",
+        "Full Stack Developer",
+        "Mern Stack Developer",
+        "Software Engineer",
+        "Next js",
+        "Frontend",
+        "Web Developer",
+        "Javascript",
+        "Typescript",
+      ];
+
+      var SEARCH_REGIONS = [
+        "us",
+        "gb",
+        "ca",
+        "au",
+        "de",
+        "fr",
+        "it",
+        "es",
+        "nl",
+        "be",
+        "ch",
+        "at",
+        "ie",
+        "lu",
+        "se",
+        "no",
+        "dk",
+        "fi",
+        "pl",
+        "cz",
+        "ro",
+        "hu",
+        "gr",
+        "pt",
+        "bg",
+        "hr",
+        "cy",
+        "ee",
+        "lv",
+        "lt",
+        "mt",
+        "sk",
+        "si",
+        "is",
+        "li",
+        "sg",
+        "my",
+        "ph",
+        "id",
+        "th",
+        "vn",
+        "ae",
+        "sa",
+        "qa",
+        "kw",
+        "om",
+        "bh",
+        "pk",
+      ];
+
+      var REGION_NAMES = {
+        us: "United States",
+        gb: "United Kingdom",
+        de: "Germany",
+        fr: "France",
+        ca: "Canada",
+        au: "Australia",
+        it: "Italy",
+        es: "Spain",
+        nl: "Netherlands",
+        be: "Belgium",
+        ch: "Switzerland",
+        at: "Austria",
+        ie: "Ireland",
+        lu: "Luxembourg",
+        se: "Sweden",
+        no: "Norway",
+        dk: "Denmark",
+        fi: "Finland",
+        pl: "Poland",
+        cz: "Czech Republic",
+        ro: "Romania",
+        hu: "Hungary",
+        gr: "Greece",
+        pt: "Portugal",
+        bg: "Bulgaria",
+        hr: "Croatia",
+        cy: "Cyprus",
+        ee: "Estonia",
+        lv: "Latvia",
+        lt: "Lithuania",
+        mt: "Malta",
+        sk: "Slovakia",
+        si: "Slovenia",
+        is: "Iceland",
+        li: "Liechtenstein",
+        sg: "Singapore",
+        my: "Malaysia",
+        ph: "Philippines",
+        id: "Indonesia",
+        th: "Thailand",
+        vn: "Vietnam",
+        ae: "United Arab Emirates",
+        sa: "Saudi Arabia",
+        qa: "Qatar",
+        kw: "Kuwait",
+        om: "Oman",
+        bh: "Bahrain",
+        pk: "Pakistan",
+      };
+
+      // ── LINKEDIN ──
+      // f_TPR=r86400  → past 24 hours
+      // f_WT=2        → Remote only (1=On-site, 2=Remote, 3=Hybrid)
+      const LINKEDIN_TARGETS = [];
+      for (var li = 0; li < SEARCH_KEYWORDS.length; li++) {
+        for (var lj = 0; lj < SEARCH_REGIONS.length; lj++) {
+          var lcc = SEARCH_REGIONS[lj];
+          var lname = REGION_NAMES[lcc];
+          if (!lname) continue;
+          LINKEDIN_TARGETS.push({
+            url:
+              "https://www.linkedin.com/jobs/search/?keywords=" +
+              encodeURIComponent(SEARCH_KEYWORDS[li]) +
+              "&location=" +
+              encodeURIComponent(lname) +
+              "&f_TPR=r86400" +
+              "&f_WT=2",
+            q: SEARCH_KEYWORDS[li],
+            region: lcc,
+            platform: "linkedin",
+          });
+        }
+      }
+
+      // ── SIMPLYHIRED ──
+      var SIMPLYHIRED_NATIVE_DOMAINS = {
+        au: "www.simplyhired.com.au",
+        de: "www.simplyhired.de",
+        fr: "www.simplyhired.fr",
+        es: "www.simplyhired.es",
+        it: "www.simplyhired.it",
+        nl: "www.simplyhired.nl",
+        be: "www.simplyhired.be",
+        at: "www.simplyhired.at",
+        ch: "www.simplyhired.ch",
+        pt: "www.simplyhired.pt",
+        se: "www.simplyhired.se",
+      };
+
+      const SIMPLYHIRED_TARGETS = [];
+      for (var si = 0; si < SEARCH_KEYWORDS.length; si++) {
+        for (var sj = 0; sj < SEARCH_REGIONS.length; sj++) {
+          var scc = SEARCH_REGIONS[sj];
+          var sname = REGION_NAMES[scc];
+          if (!sname) continue;
+          var sdomain = SIMPLYHIRED_NATIVE_DOMAINS[scc];
+          if (!sdomain) continue;
+          SIMPLYHIRED_TARGETS.push({
+            url:
+              "https://" +
+              sdomain +
+              "/search?q=" +
+              encodeURIComponent(SEARCH_KEYWORDS[si]) +
+              "&sr=100&s=d&t=1&wl=remote",
+            q: SEARCH_KEYWORDS[si],
+            region: scc,
+            platform: "simplyhired",
+          });
+        }
+      }
+
+      // ── DICE ──
+      var DICE_NATIVE_REGIONS = [
+        "us",
+        "ca",
+        "gb",
+        "au",
+        "nz",
+        "de",
+        "fr",
+        "ie",
+        "nl",
+        "pl",
+        "es",
+        "se",
+        "ch",
+        "in",
+        "sg",
+        "ae",
+        "ph",
+        "my",
+        "br",
+        "mx",
+        "ar",
+      ];
+
+      var DICE_TARGETS = [];
+      for (var di = 0; di < SEARCH_KEYWORDS.length; di++) {
+        for (var dj = 0; dj < SEARCH_REGIONS.length; dj++) {
+          var dcc = SEARCH_REGIONS[dj];
+          var dname = REGION_NAMES[dcc];
+          if (!dname) continue;
+          if (DICE_NATIVE_REGIONS.indexOf(dcc) === -1) continue;
+          DICE_TARGETS.push({
+            url:
+              "https://www.dice.com/jobs?q=" +
+              encodeURIComponent(SEARCH_KEYWORDS[di]) +
+              "&location=" +
+              encodeURIComponent(dname) +
+              "&filters.postedDate=ONE",
+            q: SEARCH_KEYWORDS[di],
+            region: dcc,
+            platform: "dice",
+          });
+        }
+      }
+
+      // ── CAREERBUILDER ──
+      var CAREERBUILDER_REGIONS = ["us"];
+
+      var CAREERBUILDER_TARGETS = [];
+      for (var ci = 0; ci < SEARCH_KEYWORDS.length; ci++) {
+        for (var cj = 0; cj < SEARCH_REGIONS.length; cj++) {
+          var ccc = SEARCH_REGIONS[cj];
+          var cname = REGION_NAMES[ccc];
+          if (!cname) continue;
+          if (CAREERBUILDER_REGIONS.indexOf(ccc) === -1) continue;
+          CAREERBUILDER_TARGETS.push({
+            url:
+              "https://www.careerbuilder.com/job-listings/search?q=" +
+              encodeURIComponent(SEARCH_KEYWORDS[ci]) +
+              "&where=" +
+              encodeURIComponent(cname) +
+              "&recency=last+1+days&rd=100",
+            region: ccc,
+            keyword: SEARCH_KEYWORDS[ci],
+            platform: "careerbuilder",
+          });
+        }
+      }
+
+      // ── GLASSDOOR ──
+      var GLASSDOOR_NATIVE_REGIONS = [];
+      var GLASSDOOR_AUTOFILL_REGIONS = ["lu"];
+
+      var GLASSDOOR_REGIONS = GLASSDOOR_NATIVE_REGIONS.concat(
+        GLASSDOOR_AUTOFILL_REGIONS,
+      );
+
+      var GLASSDOOR_NATIVE_DOMAINS = {};
+
+      var GLASSDOOR_TARGETS = [];
+
+      for (var gj = 0; gj < GLASSDOOR_REGIONS.length; gj++) {
+        var gcc = GLASSDOOR_REGIONS[gj];
+        var gname = REGION_NAMES[gcc];
+        if (!gname) continue;
+
+        var nativeDomain = GLASSDOOR_NATIVE_DOMAINS[gcc];
+        var needsAutofill =
+          !nativeDomain && GLASSDOOR_AUTOFILL_REGIONS.indexOf(gcc) !== -1;
+
+        if (!nativeDomain && !needsAutofill) continue;
+
+        for (var gk = 0; gk < SEARCH_KEYWORDS.length; gk++) {
+          var gkw = SEARCH_KEYWORDS[gk];
+          var gurl;
+
+          if (nativeDomain) {
+            gurl =
+              "https://" +
+              nativeDomain +
+              "/Job/jobs.htm?sc.keyword=" +
+              encodeURIComponent(gkw) +
+              "&fromAge=1&sortBy=date_desc&remoteWorkType=1";
+          } else {
+            gurl =
+              "https://www.glassdoor.com/Job/index.htm?gd_seed_location=" +
+              encodeURIComponent(gname) +
+              "&gd_seed_keyword=" +
+              encodeURIComponent(gkw);
+          }
+
+          GLASSDOOR_TARGETS.push({
+            url: gurl,
+            domain: gcc.toUpperCase(),
+            region: gcc,
+            keyword: gkw,
+            platform: "glassdoor",
+            needsAutofill: needsAutofill,
+          });
+        }
+      }
+
+      // ── INDEED ──
+          // ── INDEED ──
+      // Native subdomains — only countries that actually have one.
+      // Using a non-existent subdomain (bg.indeed.com) returns DNS NXDOMAIN
+      // and Chrome shows an error page Tampermonkey can't inject into.
+      var INDEED_NATIVE_SUBDOMAINS = {
+        us: "www.indeed.com",
+        gb: "uk.indeed.com",
+        ca: "ca.indeed.com",
+        au: "au.indeed.com",
+        de: "de.indeed.com",
+        fr: "fr.indeed.com",
+        it: "it.indeed.com",
+        es: "es.indeed.com",
+        nl: "nl.indeed.com",
+        be: "be.indeed.com",
+        ch: "ch.indeed.com",
+        at: "at.indeed.com",
+        ie: "ie.indeed.com",
+        lu: "lu.indeed.com",
+        no: "no.indeed.com",
+        dk: "dk.indeed.com",
+        fi: "fi.indeed.com",
+        pl: "pl.indeed.com",
+        cz: "cz.indeed.com",
+        ro: "ro.indeed.com",
+        hu: "hu.indeed.com",
+        gr: "gr.indeed.com",
+        pt: "pt.indeed.com",
+        sg: "sg.indeed.com",
+        ph: "ph.indeed.com",
+        id: "id.indeed.com",
+        th: "th.indeed.com",
+        vn: "vn.indeed.com",
+        ae: "ae.indeed.com",
+        sa: "sa.indeed.com",
+        pk: "pk.indeed.com",
+      };
+
+      var INDEED_TARGETS = [];
+      for (var ii = 0; ii < SEARCH_REGIONS.length; ii++) {
+        var icc = SEARCH_REGIONS[ii];
+        var iname = REGION_NAMES[icc];
+        if (!iname) continue;
+
+        var nativeSub = INDEED_NATIVE_SUBDOMAINS[icc];
+        if (!nativeSub) continue; // region not supported by Indeed — skip
+
+        for (var ik = 0; ik < SEARCH_KEYWORDS.length; ik++) {
+          var ikw = SEARCH_KEYWORDS[ik];
+          INDEED_TARGETS.push({
+            url:
+              "https://" +
+              nativeSub +
+              "/jobs?q=" +
+              encodeURIComponent(ikw) +
+              "&l=" +
+              encodeURIComponent(iname) +
+              "&fromage=1" +          // ← last 24 hours (was 2)
+              "&sort=date",           // ← newest first
+            region: icc.toUpperCase(),
+            keyword: ikw,
+            platform: "indeed",
+          });
+        }
+      }
+
+      // ── BUILD PLATFORM TARGETS ──
+      var allTargetsMap = {
+        linkedin: LINKEDIN_TARGETS,
+        simplyhired: SIMPLYHIRED_TARGETS,
+        dice: DICE_TARGETS,
+        careerbuilder: CAREERBUILDER_TARGETS,
+        glassdoor: GLASSDOOR_TARGETS,
+        indeed: INDEED_TARGETS,
+      };
+
+      var PLATFORM_TARGETS = {};
+      var PLATFORM_ORDER = [];
+      for (var i = 0; i < ENABLED_PLATFORMS.length; i++) {
+        var name = ENABLED_PLATFORMS[i];
+        if (allTargetsMap[name] && allTargetsMap[name].length > 0) {
+          PLATFORM_TARGETS[name] = allTargetsMap[name];
+          PLATFORM_ORDER.push(name);
+        }
+      }
+
+      var STATUS_ENDPOINTS = {};
+      for (var j = 0; j < PLATFORM_ORDER.length; j++) {
+        var p = PLATFORM_ORDER[j];
+        STATUS_ENDPOINTS[p] = "/api/" + p + "/status";
+      }
+
+      // ── STATE ──
+      var currentPlatformOrderKey = PLATFORM_ORDER.join(",");
+      var savedOrder = localStorage.getItem("scraperPlatformOrder");
+      if (savedOrder !== currentPlatformOrderKey) {
+        localStorage.removeItem("scraperPlatform");
+        var allPlatformKeys = Object.keys(allTargetsMap);
+        for (var k = 0; k < allPlatformKeys.length; k++) {
+          localStorage.removeItem("scraperIndex_" + allPlatformKeys[k]);
+        }
+        localStorage.setItem("scraperPlatformOrder", currentPlatformOrderKey);
+      }
+      var storedPlatform = localStorage.getItem("scraperPlatform");
+      var currentPlatform =
+        storedPlatform && PLATFORM_ORDER.indexOf(storedPlatform) >= 0
+          ? storedPlatform
+          : PLATFORM_ORDER[0];
+      if (storedPlatform && PLATFORM_ORDER.indexOf(storedPlatform) < 0) {
+        localStorage.removeItem("scraperPlatform");
+      }
+      var currentIndex = parseInt(
+        localStorage.getItem("scraperIndex_" + currentPlatform) || "0",
+        10,
+      );
+      var isRunning = false;
+      var pollTimerId = null;
+      var POLL_INTERVAL_MS = 1200;
+      var POLL_TIMEOUT_MS = 22000;
+      var NEXT_TARGET_DELAY_MS = 3500;
+      var POLL_TIMEOUT_BY_PLATFORM = {
+        indeed: 120000,
+        glassdoor: 22000,
+        simplyhired: 120000,
+        dice: 30000,
+        careerbuilder: 30000,
+        linkedin: 120000,
+      };
+      var COUNTDOWN_SECONDS = 2;
+      var countdownTimerId = null;
+      var countdownRemaining = COUNTDOWN_SECONDS;
+
+      function platformTargets() {
+        return PLATFORM_TARGETS[currentPlatform] || [];
+      }
+
+      function saveState() {
+        localStorage.setItem("scraperPlatform", currentPlatform);
+        localStorage.setItem("scraperIndex_" + currentPlatform, currentIndex);
+        localStorage.setItem("scraperPlatformOrder", currentPlatformOrderKey);
+      }
+
+      function switchToPlatform(platform) {
+        currentPlatform = platform;
+        currentIndex = parseInt(
+          localStorage.getItem("scraperIndex_" + platform) || "0",
+          10,
+        );
+        saveState();
+        log(
+          "Switched to " +
+            platform.toUpperCase() +
+            " (index=" +
+            currentIndex +
+            ")",
+          "info",
+        );
+      }
+
+      function updateUI() {
+        var targets = platformTargets();
+        document.getElementById("activePlatform").textContent =
+          currentPlatform.toUpperCase();
+        document.getElementById("totalTargets").textContent = targets.length;
+        document.getElementById("currentIdx").textContent = Math.min(
+          currentIndex,
+          targets.length,
+        );
+        document.getElementById("remaining").textContent = Math.max(
+          0,
+          targets.length - currentIndex,
+        );
+
+        var pct =
+          targets.length > 0
+            ? Math.round((currentIndex / targets.length) * 100)
+            : 0;
+        document.getElementById("progressFill").style.width = pct + "%";
+
+        if (isRunning) {
+          document.getElementById("progressLabel").textContent =
+            "[" +
+            currentPlatform.toUpperCase() +
+            "] Target " +
+            (currentIndex + 1) +
+            " of " +
+            targets.length;
+          document.getElementById("loopStatus").textContent =
+            "Running — " + currentPlatform + " idx=" + currentIndex;
+          document.getElementById("loopStatus").className =
+            "loop-status running";
+        } else if (
+          currentIndex >= targets.length &&
+          currentPlatform === PLATFORM_ORDER[PLATFORM_ORDER.length - 1]
+        ) {
+          document.getElementById("progressLabel").textContent =
+            "All platforms complete";
+          document.getElementById("loopStatus").textContent =
+            "ALL PLATFORMS COMPLETED!";
+          document.getElementById("loopStatus").className =
+            "loop-status stopped";
+        } else if (currentIndex >= targets.length) {
+          document.getElementById("progressLabel").textContent =
+            currentPlatform.toUpperCase() + " complete — next platform pending";
+          document.getElementById("loopStatus").textContent =
+            currentPlatform.toUpperCase() +
+            " done. Switch to next platform via Resume.";
+          document.getElementById("loopStatus").className =
+            "loop-status stopped";
+        } else {
+          document.getElementById("progressLabel").textContent =
+            "[" +
+            currentPlatform.toUpperCase() +
+            "] " +
+            currentIndex +
+            " of " +
+            targets.length +
+            " done";
+          document.getElementById("loopStatus").textContent =
+            "Idle — press Start to resume";
+          document.getElementById("loopStatus").className = "loop-status idle";
+        }
+
+        var bSH = document.getElementById("badgeSimplyHired");
+        var bD = document.getElementById("badgeDice");
+        var bC = document.getElementById("badgeCareerBuilder");
+        var bI = document.getElementById("badgeIndeed");
+        var bG = document.getElementById("badgeGlassdoor");
+        var bL = document.getElementById("badgeLinkedIn");
+        bSH.className = "platform-badge simplyhired";
+        bD.className = "platform-badge dice";
+        bC.className = "platform-badge careerbuilder";
+        bI.className = "platform-badge indeed";
+        bG.className = "platform-badge glassdoor";
+        bL.className = "platform-badge linkedin";
+
+        if (
+          SIMPLYHIRED_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_simplyhired") || "0") >=
+            SIMPLYHIRED_TARGETS.length
+        )
+          bSH.classList.add("done");
+        if (
+          DICE_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_dice") || "0") >=
+            DICE_TARGETS.length
+        )
+          bD.classList.add("done");
+        if (
+          CAREERBUILDER_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_careerbuilder") || "0") >=
+            CAREERBUILDER_TARGETS.length
+        )
+          bC.classList.add("done");
+        if (
+          INDEED_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_indeed") || "0") >=
+            INDEED_TARGETS.length
+        )
+          bI.classList.add("done");
+        if (
+          GLASSDOOR_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_glassdoor") || "0") >=
+            GLASSDOOR_TARGETS.length
+        )
+          bG.classList.add("done");
+        if (
+          LINKEDIN_TARGETS.length > 0 &&
+          parseInt(localStorage.getItem("scraperIndex_linkedin") || "0") >=
+            LINKEDIN_TARGETS.length
+        )
+          bL.classList.add("done");
+
+        if (
+          currentPlatform === "simplyhired" &&
+          bSH.classList.contains("done") === false
+        )
+          bSH.classList.add("active");
+        if (
+          currentPlatform === "dice" &&
+          bD.classList.contains("done") === false
+        )
+          bD.classList.add("active");
+        if (
+          currentPlatform === "careerbuilder" &&
+          bC.classList.contains("done") === false
+        )
+          bC.classList.add("active");
+        if (
+          currentPlatform === "indeed" &&
+          bI.classList.contains("done") === false
+        )
+          bI.classList.add("active");
+        if (
+          currentPlatform === "glassdoor" &&
+          bG.classList.contains("done") === false
+        )
+          bG.classList.add("active");
+        if (currentPlatform === "linkedin" && !bL.classList.contains("done"))
+          bL.classList.add("active");
+
+        var btnStart = document.getElementById("btnStartLoop");
+        var btnStop = document.getElementById("btnStopLoop");
+        var btnReset = document.getElementById("btnReset");
+        var badge = document.getElementById("countdownBadge");
+        var btnCancel = document.getElementById("btnCancelCountdown");
+        var lastPlatform = PLATFORM_ORDER[PLATFORM_ORDER.length - 1];
+        var allDone =
+          targets.length === 0 ||
+          (currentPlatform === lastPlatform &&
+            currentIndex >= PLATFORM_TARGETS[lastPlatform].length);
+
+        if (countdownTimerId !== null) {
+          btnStart.style.display = "none";
+          btnStop.style.display = "none";
+          btnReset.style.display = "none";
+          badge.style.display = "inline-flex";
+          btnCancel.style.display = "inline-flex";
+        } else if (isRunning) {
+          btnStart.style.display = "none";
+          btnStop.style.display = "inline-flex";
+          btnReset.style.display = "none";
+          badge.style.display = "none";
+          btnCancel.style.display = "none";
+        } else if (allDone) {
+          btnStart.style.display = "none";
+          btnStop.style.display = "none";
+          btnReset.style.display = "inline-flex";
+          badge.style.display = "none";
+          btnCancel.style.display = "none";
+        } else {
+          btnStart.style.display = "inline-flex";
+          btnStop.style.display = "none";
+          btnReset.style.display =
+            currentIndex > 0 || currentPlatform !== PLATFORM_ORDER[0]
+              ? "inline-flex"
+              : "none";
+          badge.style.display = "none";
+          btnCancel.style.display = "none";
+        }
+      }
+
+      function log(msg, cls) {
+        var el = document.getElementById("log");
+        var div = document.createElement("div");
+        div.className = "entry " + (cls || "");
+        div.textContent = "[" + new Date().toLocaleTimeString() + "] " + msg;
+        el.appendChild(div);
+        el.scrollTop = el.scrollHeight;
+      }
+
+      function resetBackendState() {
+        for (var ri = 0; ri < PLATFORM_ORDER.length; ri++) {
+          var rp = PLATFORM_ORDER[ri];
+          try {
+            fetch("/api/" + rp + "/reset", { method: "POST" }).catch(
+              function () {},
+            );
+          } catch (e) {}
+        }
+      }
+
+      async function pollBackendCompletion(platform, idx) {
+        try {
+          var endpoint = STATUS_ENDPOINTS[platform] + "?idx=" + idx;
+          var resp = await fetch(endpoint);
+          var data = await resp.json();
+          return data.completed === true;
+        } catch (err) {
+          return false;
+        }
+      }
+
+      function openNextTab() {
+        var targets = platformTargets();
+        if (currentIndex >= targets.length) {
+          log(currentPlatform.toUpperCase() + " targets complete!", "success");
+          var platformIdx = PLATFORM_ORDER.indexOf(currentPlatform);
+          if (platformIdx >= 0 && platformIdx < PLATFORM_ORDER.length - 1) {
+            var nextPlatform = PLATFORM_ORDER[platformIdx + 1];
+            log(
+              "Switching from " +
+                currentPlatform.toUpperCase() +
+                " to " +
+                nextPlatform.toUpperCase() +
+                "...",
+              "info",
+            );
+            switchToPlatform(nextPlatform);
+            updateUI();
+            log(
+              "Now running " + nextPlatform.toUpperCase() + " from index 0.",
+              "info",
+            );
+            openNextTab();
+            return;
+          } else {
+            log("ALL PLATFORMS COMPLETED! &#127881;", "success");
+            stopLoop();
+            return;
+          }
+        }
+
+        var t = targets[currentIndex];
+        var tabUrl = t.url + "&scrape_idx=" + currentIndex;
+
+        log(
+          "[" +
+            currentPlatform.toUpperCase() +
+            "] Opening [" +
+            (currentIndex + 1) +
+            "/" +
+            targets.length +
+            "]: " +
+            (t.keyword || t.domain || t.q || "?") +
+            " (idx=" +
+            currentIndex +
+            ")",
+          "",
+        );
+        log("  URL: " + tabUrl.substring(0, 130), "");
+
+        var polledPlatform = currentPlatform;
+        var polledIndex = currentIndex;
+        var pollStart = Date.now();
+
+        // One of these will be populated after the open attempt resolves:
+        var scraperTab = null;     // window ref (fallback path)
+        var bgTabId = null;        // opaque id used by tab-opener.user.js
+        var myTimer = null;
+        var isTaskAlive = true;
+
+        function advance(success) {
+          if (!isTaskAlive) return;
+          isTaskAlive = false;
+          if (pollTimerId !== myTimer) return;
+          pollTimerId = null;
+          if (myTimer !== null) clearInterval(myTimer);
+
+          // Clean up whichever handle we used
+          if (bgTabId) {
+            delete _bgTabCloseCallbacks[bgTabId];
+            closeBackgroundTab(bgTabId);
+          }
+          try {
+            if (scraperTab && !scraperTab.closed) scraperTab.close();
+          } catch (_) {}
+
+          currentIndex++;
+          saveState();
+          updateUI();
+          if (success) {
+            log(
+              "  Backend confirmed " +
+                polledPlatform.toUpperCase() +
+                " idx=" +
+                (currentIndex - 1) +
+                " complete.",
+              "success",
+            );
+          } else {
+            log(
+              "  Timed out waiting for " +
+                polledPlatform.toUpperCase() +
+                " idx=" +
+                (currentIndex - 1) +
+                " — skipping.",
+              "warn",
+            );
+          }
+          if (isRunning) setTimeout(openNextTab, NEXT_TARGET_DELAY_MS);
+        }
+
+        // Try the background-tab bridge first.
+        openBackgroundTab(tabUrl).then(function (res) {
+          // If the user hit Stop while we were waiting, bail.
+          if (!isRunning) {
+            if (res && res.ok && res.id) closeBackgroundTab(res.id);
+            return;
+          }
+
+          if (res.ok) {
+            bgTabId = res.id;
+            // Listen for the target tab closing itself (its userscript calls
+            // window.close() after POSTing) — advance immediately instead
+            // of waiting for the poll timeout.
+            _bgTabCloseCallbacks[res.id] = function () {
+              if (!isTaskAlive) return;
+              log("  Tab closed without confirmation — advancing.", "warn");
+              advance(false);
+            };
+            log(
+              "  Tab opened in BACKGROUND (no focus steal). Polling " +
+                STATUS_ENDPOINTS[polledPlatform] +
+                "?idx=" +
+                polledIndex +
+                " ...",
+              "warn",
+            );
+          } else {
+            // Fallback: legacy window.open. This WILL steal focus.
+            log(
+              "  tab-opener.user.js not detected (" +
+                res.via +
+                "). Falling back to foreground open.",
+              "warn",
+            );
+            scraperTab = window.open("about:blank", "_blank");
+            if (!scraperTab) {
+              log(
+                "  Pop-up blocked! Allow pop-ups for localhost:3000.",
+                "error",
+              );
+              stopLoop();
+              return;
+            }
+            try {
+              window.focus();
+            } catch (_) {}
+            setTimeout(function () {
+              try {
+                window.focus();
+              } catch (_) {}
+            }, 0);
+            setTimeout(function () {
+              try {
+                window.focus();
+              } catch (_) {}
+            }, 150);
+            try {
+              scraperTab.location.href = tabUrl;
+            } catch (_) {
+              setTimeout(function () {
+                try {
+                  scraperTab.location.href = tabUrl;
+                } catch (e) {}
+              }, 80);
+            }
+            log(
+              "  Tab opened (foreground). Polling " +
+                STATUS_ENDPOINTS[polledPlatform] +
+                "?idx=" +
+                polledIndex +
+                " ...",
+              "warn",
+            );
+          }
+
+          // Start polling AFTER the open attempt has resolved.
+          myTimer = setInterval(async function () {
+            if (pollTimerId !== myTimer) return;
+            var done = await pollBackendCompletion(
+              polledPlatform,
+              polledIndex,
+            );
+            if (pollTimerId !== myTimer) return;
+            if (done) {
+              advance(true);
+              return;
+            }
+
+            // Only the legacy window.open path gives us a reliable `.closed`
+            // signal — the userscript bridge reports closes via postMessage.
+            var tabClosed = false;
+            var tabAgeMs = Date.now() - pollStart;
+            if (tabAgeMs > 6000) {
+              try {
+                tabClosed = !!(scraperTab && scraperTab.closed);
+              } catch (_) {}
+            }
+            if (tabClosed) {
+              log("  Tab closed without confirmation — advancing.", "warn");
+              advance(false);
+              return;
+            }
+
+            var timeoutMs =
+              POLL_TIMEOUT_BY_PLATFORM[polledPlatform] || POLL_TIMEOUT_MS;
+            if (Date.now() - pollStart >= timeoutMs) advance(false);
+          }, POLL_INTERVAL_MS);
+
+          pollTimerId = myTimer;
+        });
+      }
+
+      function startLoop() {
+        if (isRunning) return;
+        var targets = platformTargets();
+        if (
+          currentIndex >= targets.length &&
+          currentPlatform === PLATFORM_ORDER[PLATFORM_ORDER.length - 1]
+        ) {
+          log("All platforms done.", "warn");
+          return;
+        }
+        isRunning = true;
+        updateUI();
+        log(
+          "=== Loop started [" + currentPlatform.toUpperCase() + "] ===",
+          "success",
+        );
+        openNextTab();
+      }
+
+      function stopLoop() {
+        isRunning = false;
+        if (pollTimerId) {
+          clearInterval(pollTimerId);
+          pollTimerId = null;
+        }
+        cancelCountdown();
+        saveState();
+        updateUI();
+        log("Loop stopped.", "warn");
+      }
+
+      function resetAll() {
+        if (isRunning) stopLoop();
+        cancelCountdown();
+        resetBackendState();
+        currentPlatform = PLATFORM_ORDER[0];
+        currentIndex = 0;
+        var allPlatformKeys = Object.keys(allTargetsMap);
+        for (var k = 0; k < allPlatformKeys.length; k++) {
+          localStorage.setItem("scraperIndex_" + allPlatformKeys[k], "0");
+        }
+        localStorage.setItem("scraperPlatform", PLATFORM_ORDER[0]);
+        saveState();
+        updateUI();
+        log(
+          "Full reset. Starting from " +
+            PLATFORM_ORDER[0].toUpperCase() +
+            " index 0.",
+          "",
+        );
+      }
+
+      function cancelCountdown() {
+        if (countdownTimerId !== null) {
+          clearInterval(countdownTimerId);
+          countdownTimerId = null;
+        }
+        countdownRemaining = COUNTDOWN_SECONDS;
+        updateUI();
+      }
+
+      function startCountdown() {
+        var targets = platformTargets();
+        if (
+          currentPlatform === PLATFORM_ORDER[PLATFORM_ORDER.length - 1] &&
+          currentIndex >= targets.length &&
+          targets.length > 0
+        ) {
+          log(
+            PLATFORM_ORDER[PLATFORM_ORDER.length - 1].toUpperCase() +
+              " already complete — skipping auto-start.",
+            "",
+          );
+          cancelCountdown();
+          updateUI();
+          return;
+        }
+        if (currentIndex >= targets.length && targets.length > 0) {
+          var platformIdx = PLATFORM_ORDER.indexOf(currentPlatform);
+          if (platformIdx >= 0 && platformIdx < PLATFORM_ORDER.length - 1) {
+            var next = PLATFORM_ORDER[platformIdx + 1];
+            log(
+              currentPlatform.toUpperCase() +
+                " already done. Auto-switching to " +
+                next.toUpperCase() +
+                "...",
+              "info",
+            );
+            switchToPlatform(next);
+            updateUI();
+          } else {
+            log("All done — no auto-start.", "");
+            cancelCountdown();
+            updateUI();
+            return;
+          }
+        }
+
+        countdownRemaining = COUNTDOWN_SECONDS;
+        document.getElementById("countdownBadge").textContent =
+          "Auto-start in " + countdownRemaining + "s";
+        updateUI();
+
+        countdownTimerId = setInterval(function () {
+          countdownRemaining--;
+          if (countdownRemaining <= 0) {
+            clearInterval(countdownTimerId);
+            countdownTimerId = null;
+            updateUI();
+            log("Countdown done — auto-starting.", "success");
+            startLoop();
+          } else {
+            document.getElementById("countdownBadge").textContent =
+              "Auto-start in " + countdownRemaining + "s";
+            document.getElementById("loopStatus").textContent =
+              "Countdown — auto-starting in " + countdownRemaining + "s...";
+          }
+        }, 1000);
+      }
+
+      document
+        .getElementById("btnCancelCountdown")
+        .addEventListener("click", function () {
+          log("Auto-start cancelled. Manual control.", "");
+          cancelCountdown();
+          updateUI();
+        });
+      document
+        .getElementById("btnStartLoop")
+        .addEventListener("click", startLoop);
+      document
+        .getElementById("btnStopLoop")
+        .addEventListener("click", stopLoop);
+      document.getElementById("btnReset").addEventListener("click", resetAll);
+      window.addEventListener("beforeunload", function () {
+        saveState();
+      });
+
+      updateUI();
+      var logMsg = "Loaded: ";
+      var platformNames = Object.keys(PLATFORM_TARGETS);
+      var parts = [];
+      for (var pn = 0; pn < platformNames.length; pn++) {
+        var name = platformNames[pn];
+        parts.push(
+          PLATFORM_TARGETS[name].length +
+            " " +
+            name.charAt(0).toUpperCase() +
+            name.slice(1),
+        );
+      }
+      logMsg += parts.join(" + ");
+      log(logMsg, "");
+      log(
+        "Active platform: " +
+          currentPlatform.toUpperCase() +
+          " | Index: " +
+          currentIndex,
+        "",
+      );
+      log("Both userscripts must be installed.", "warn");
+
+      startCountdown();
+
+      (function handleQueryParams() {
+        var params = new URLSearchParams(window.location.search);
+        var shouldReset = params.get("reset") === "true";
+        var shouldAutostart = params.get("autostart") === "true";
+        if (shouldReset || shouldAutostart) {
+          log("URL param detected — clearing all scraper state...", "warn");
+          var allPlatformKeys = Object.keys(allTargetsMap);
+          for (var k = 0; k < allPlatformKeys.length; k++) {
+            localStorage.removeItem("scraperIndex_" + allPlatformKeys[k]);
+          }
+          localStorage.removeItem("scraperPlatform");
+          localStorage.removeItem("scraperPlatformOrder");
+          cancelCountdown();
+          stopLoop();
+          resetBackendState();
+          currentPlatform = PLATFORM_ORDER[0];
+          currentIndex = 0;
+          saveState();
+          updateUI();
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname,
+          );
+        }
+        if (shouldAutostart) {
+          setTimeout(function () {
+            startCountdown();
+          }, 300);
+        }
+      })();
+    </script>
+  </body>
+</html>

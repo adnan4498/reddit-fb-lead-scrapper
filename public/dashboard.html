@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Scraper Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body class="body-class">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="header-class dash-header">
+      <div class="dash-bar dash-bar-top">
+        <div class="dash-brand">
+          <h1>Job Scraper Dashboard</h1>
+          <span class="dash-total">Total <b id="stat-total">0</b></span>
+        </div>
+
+        <div id="admin-actions" class="dash-actions">
+          <button class="btn btn-primary" id="btn-scrape">Run Scrape</button>
+          <button class="btn btn-primary btn-green" id="btn-full-scrape">Full Scrape + Loop</button>
+          <button class="btn btn-primary btn-purple" id="btn-distribute-all">Distribute All</button>
+          <button class="btn btn-icon" id="btn-refresh" title="Refresh">↻</button>
+
+          <div class="dash-dropdown">
+            <button class="btn dash-dropdown-toggle" type="button">More ▾</button>
+            <div class="dash-dropdown-menu">
+              <button class="btn" id="btn-purge">Purge Stale Pending</button>
+              <button class="btn" id="btn-dedup">Run Cross-Run Dedup</button>
+              <button class="btn" id="btn-logs">View Test Flight Logs</button>
+              <button class="btn" id="btn-metrics">Run Metrics Overview</button>
+              <button class="btn" id="btn-admin">Admin Monitor</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn" id="btn-return-jobs" style="display:none">Return Jobs</button>
+      </div>
+
+      <div class="dash-bar dash-bar-stats">
+        <span class="dash-stat s-pending"><i></i>Pending <b id="stat-pending">0</b></span>
+        <span class="dash-stat s-applied"><i></i>Applied <b id="stat-applied">0</b></span>
+        <span class="dash-stat s-interviewing"><i></i>Interviewing <b id="stat-interviewing">0</b></span>
+        <span class="dash-stat s-offered"><i></i>Offered <b id="stat-offered">0</b></span>
+        <span class="dash-stat s-rejected"><i></i>Rejected <b id="stat-rejected">0</b></span>
+        <span class="dash-stat s-archived"><i></i>Archived <b id="stat-archived">0</b></span>
+        <span class="dash-stat s-duplicate"><i></i>Duplicate <b id="stat-duplicate">0</b></span>
+      </div>
+    </header>
+
+    <!-- ═══════════ SCRAPE PROGRESS ═══════════ -->
+    <div id="scrape-progress">
+      <div class="inner">
+        <span class="label">Scraping Progress:</span>
+        <div class="track"><div class="bar" id="progress-bar" style="width: 0%"></div></div>
+        <span class="text" id="progress-text">0%</span>
+      </div>
+    </div>
+
+    <!-- ═══════════ FILTER BAR (sticky) ═══════════ -->
+    <div class="dash-filters">
+      <div class="dash-filter-row">
+        <span class="dash-filter-label">Run</span>
+        <select id="main-run-selector" class="dash-select">
+          <option value="">All Runs</option>
+        </select>
+
+        <span id="worker-filter-container" class="dash-inline" style="display:none">
+          <span class="dash-filter-label">Worker</span>
+          <select id="worker-filter-selector" class="dash-select">
+            <option value="">All Workers</option>
+          </select>
+          <span id="worker-range-badge" class="dash-range-badge" style="display:none"></span>
+        </span>
+
+        <span id="worker-badge" class="dash-worker-badge" style="display:none"></span>
+        <span id="worker-progress" class="dash-worker-progress" style="display:none"></span>
+        <span id="unassigned-pool-count" class="dash-unassigned">Unassigned: 0</span>
+
+        <span class="dash-spacer"></span>
+
+        <span id="pagination-info" class="dash-page-info"></span>
+        <button class="btn btn-sm" id="btn-prev-page" disabled>← Prev</button>
+        <button class="btn btn-sm" id="btn-next-page" disabled>Next →</button>
+        <button class="btn btn-sm dash-filter-toggle" id="dash-filter-toggle">Filters ▾</button>
+      </div>
+
+      <!-- Collapsible filter pills -->
+      <div class="dash-filter-panel" id="dash-filter-panel" style="display:none">
+        <div class="dash-filter-row">
+          <span class="dash-filter-label">Date</span>
+          <span id="pills-date"></span>
+
+          <span class="dash-filter-label">Type</span>
+          <span id="pills-type"></span>
+        </div>
+
+        <div class="dash-filter-row">
+          <span class="dash-filter-label">Status</span>
+          <span id="pills-status"></span>
+        </div>
+
+        <div class="dash-filter-row">
+          <span class="dash-filter-label">Tier</span>
+          <span id="pills-tier"></span>
+        </div>
+
+        <div class="dash-filter-row dash-filter-sources">
+          <span class="dash-filter-label">Source</span>
+          <span id="pills-source-agg"></span>
+          <span class="dash-source-divider">|</span>
+          <span class="dash-filter-label dash-premium-label">Premium</span>
+          <span id="pills-source-prem"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ JOBS TABLE ═══════════ -->
+    <div class="container">
+      <div class="loading" id="loading">
+        <span class="spinner"></span>Loading jobs...
+      </div>
+      <table id="jobs-table" style="display: none">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Region</th>
+            <th>Source</th>
+            <th>Posted / Age</th>
+            <th>URL</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="jobs-tbody"></tbody>
+      </table>
+      <div class="empty-state" id="empty-state" style="display: none">
+        <h2>No jobs found</h2>
+        <p>Click "Run Scrape Now" to fetch job listings from all sources.</p>
+      </div>
+    </div>
+
+    <!-- ═══════════ WORKER MONITOR (collapsible) ═══════════ -->
+    <div class="footer-class" id="admin-panel" style="display:none">
+      <div class="dash-worker-header">
+        <h3>Live Worker Monitor</h3>
+        <button class="btn btn-sm" id="dash-worker-toggle">Hide ▾</button>
+      </div>
+      <div id="dash-worker-body">
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Worker Name</th>
+              <th>Color</th>
+              <th>Assigned Range</th>
+              <th>Claimed</th>
+              <th>Pending</th>
+              <th>Applied</th>
+              <th>Interviewing</th>
+              <th>Offered</th>
+              <th>Rejected</th>
+              <th>Archived</th>
+              <th>Duplicate</th>
+              <th>Manual Review</th>
+              <th>Skipped</th>
+              <th>Last Active</th>
+              <th>Progress</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="worker-monitor-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════ OVERLAYS (unchanged) ═══════════ -->
+    <div class="copied-toast" id="toast">Copied to clipboard</div>
+
+    <div class="metrics-overlay hidden" id="metrics-overlay">
+      <div class="metrics-pane">
+        <h2>Run Metrics Overview</h2>
+        <div style="display: flex; gap: 8px; align-items: center">
+          <label style="font-size: 12px; color: var(--text-secondary)">Run Context:</label>
+          <select id="metrics-run-selector" style="padding: 4px 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; flex: 1">
+            <option value="">All History</option>
+          </select>
+        </div>
+        <div class="metrics-grid" id="metrics-grid">
+          <div class="metric-card">
+            <div class="mc-label">Top Platform</div>
+            <div class="mc-value" id="m-top-platform">-</div>
+            <div class="mc-sub" id="m-top-platform-jobs"></div>
+          </div>
+          <div class="metric-card warn">
+            <div class="mc-label">Lowest Platform</div>
+            <div class="mc-value" id="m-low-platform">-</div>
+            <div class="mc-sub" id="m-low-platform-jobs"></div>
+          </div>
+          <div class="metric-card">
+            <div class="mc-label">Top Region</div>
+            <div class="mc-value" id="m-top-region">-</div>
+            <div class="mc-sub" id="m-top-region-jobs"></div>
+          </div>
+          <div class="metric-card warn">
+            <div class="mc-label">Lowest Region</div>
+            <div class="mc-value" id="m-low-region">-</div>
+            <div class="mc-sub" id="m-low-region-jobs"></div>
+          </div>
+          <div class="metric-card" style="grid-column: 1/-1">
+            <div class="mc-label">Top Keyword</div>
+            <div class="mc-value" id="m-top-keyword">-</div>
+            <div class="mc-sub" id="m-top-keyword-jobs"></div>
+          </div>
+        </div>
+        <button class="btn" id="metrics-close-btn" style="align-self: flex-end">Close</button>
+      </div>
+    </div>
+
+    <div class="log-overlay hidden" id="log-overlay">
+      <div class="log-pane">
+        <div class="log-header">
+          <h2 id="log-timestamp">Loading...</h2>
+          <button class="log-close" id="log-close-btn">Close</button>
+        </div>
+        <div style="padding: 10px 24px; background: #21242b; border-bottom: 1px solid #2d3139; flex-shrink: 0">
+          <label style="font-size: 11px; color: #94a3b8; margin-right: 8px">Select Scrape Run History:</label>
+          <select id="log-run-selector" style="padding: 5px 10px; border: 1px solid #3a3f4b; background: #1a1d23; color: #e2e8f0; border-radius: 5px; font-size: 12px; max-width: 400px">
+            <option value="">No runs available</option>
+          </select>
+        </div>
+        <div class="log-aggregate" id="log-aggregate" style="display: none"></div>
+        <div class="log-entries" id="log-entries">
+          <div class="log-loading-msg">Loading scrape logs...</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="return-jobs-modal" class="log-overlay hidden">
+      <div class="metrics-pane" style="text-align:center">
+        <h2 style="margin-bottom:12px">Return Untouched Jobs</h2>
+        <p style="margin-bottom:16px;color:var(--text-secondary);font-size:13px">Return remaining untouched jobs to the unassigned pool?</p>
+        <div style="display:flex;gap:12px;justify-content:center">
+          <button class="btn btn-danger" id="btn-return-confirm">Confirm</button>
+          <button class="btn" id="btn-return-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropdown & toggle wiring -->
+    <script>
+      (function () {
+        // Close "More" menu when clicking anywhere else
+        document.addEventListener("click", function (e) {
+          var toggle = e.target.closest(".dash-dropdown-toggle");
+          var menu = document.querySelector(".dash-dropdown-menu");
+          if (toggle) {
+            e.stopPropagation();
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            return;
+          }
+          if (menu && !e.target.closest(".dash-dropdown-menu")) {
+            menu.style.display = "none";
+          }
+        });
+
+        // Filters panel toggle
+        var ft = document.getElementById("dash-filter-toggle");
+        var fp = document.getElementById("dash-filter-panel");
+        if (ft && fp) {
+          // restore state
+          if (localStorage.getItem("dashFiltersOpen") === "1") {
+            fp.style.display = "block";
+            ft.textContent = "Filters ▴";
+          }
+          ft.addEventListener("click", function () {
+            var open = fp.style.display === "block";
+            fp.style.display = open ? "none" : "block";
+            ft.textContent = open ? "Filters ▾" : "Filters ▴";
+            localStorage.setItem("dashFiltersOpen", open ? "0" : "1");
+          });
+        }
+
+        // Worker monitor toggle
+        var wt = document.getElementById("dash-worker-toggle");
+        var wb = document.getElementById("dash-worker-body");
+        if (wt && wb) {
+          if (localStorage.getItem("dashWorkerOpen") === "0") {
+            wb.style.display = "none";
+            wt.textContent = "Show ▾";
+          }
+          wt.addEventListener("click", function () {
+            var open = wb.style.display !== "none";
+            wb.style.display = open ? "none" : "block";
+            wt.textContent = open ? "Show ▾" : "Hide ▴";
+            localStorage.setItem("dashWorkerOpen", open ? "0" : "1");
+          });
+        }
+      })();
+    </script>
+
+    <script src="dashboard.js"></script>
+    <script src="admin.js"></script>
+    <script src="worker-client.js"></script>
+  </body>
+</html>
